@@ -73,6 +73,7 @@ make test    # pytest
 - 使用中文撰写，关键术语首次出现标注英文原文
 - 代码注释使用英文
 - `examples/` 下脚本的 docstring 和注释使用英文
+- **框图和流程图优先使用 Mermaid 格式**（``.. mermaid::`` 指令），仅在 Mermaid 无法表达时使用 ASCII art
 
 ## 协作入口
 

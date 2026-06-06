@@ -8,6 +8,7 @@ copyright = f"{datetime.date.today().year}, {author}"
 
 extensions = [
     "sphinx.ext.intersphinx",
+    "sphinxcontrib.mermaid",
 ]
 
 templates_path = []

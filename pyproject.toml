@@ -22,6 +22,7 @@ lint = [
 docs = [
     "sphinx>=7.0",
     "sphinx-rtd-theme>=2.0",
+    "sphinxcontrib-mermaid>=2.0",
 ]
 
 [tool.setuptools.packages.find]

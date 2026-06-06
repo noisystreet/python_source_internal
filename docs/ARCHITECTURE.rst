@@ -21,24 +21,29 @@ CPython 源码架构总览
 分层架构概览
 ------------
 
-::
+.. mermaid::
 
-    ┌─────────────────────────────────────┐
-    │            Python 字节码              │
-    │   (由 py_compile 或交互式编译产生)    │
-    ├─────────────────────────────────────┤
-    │        编译器 / 语法 & 符号分析         │
-    │    Parser / Compiler / Symtable       │
-    ├─────────────────────────────────────┤
-    │            字节码执行引擎               │
-    │    ceval.c (核心解释循环)              │
-    ├─────────────────────────────────────┤
-    │          运行时支撑系统                 │
-    │    对象模型 / 内存管理 / 异常 / 模块    │
-    ├─────────────────────────────────────┤
-    │          底层基础抽象层                 │
-    │    多线程(GIL) / I/O / 系统调用        │
-    └─────────────────────────────────────┘
+   graph TD
+       subgraph 应用层
+           Bytecode["Python 字节码<br/>(由 py_compile 或交互式编译产生)"]
+       end
+       subgraph 编译层
+           Compiler["编译器 / 语法 & 符号分析<br/>Parser / Compiler / Symtable"]
+       end
+       subgraph 执行层
+           CEval["字节码执行引擎<br/>ceval.c (核心解释循环)"]
+       end
+       subgraph 运行时支撑层
+           Runtime["运行时支撑系统<br/>对象模型 / 内存管理 / 异常 / 模块"]
+       end
+       subgraph 系统层
+           Sys["底层基础抽象层<br/>多线程(GIL) / I/O / 系统调用"]
+       end
+
+       Bytecode --> Compiler
+       Compiler --> CEval
+       CEval --> Runtime
+       Runtime --> Sys
 
 核心子系统
 ----------
