@@ -11,6 +11,12 @@ CPython 源码深度解读 —— 以文档为主、示例为辅，系统梳理 
 
 .. toctree::
    :maxdepth: 2
+   :caption: 开发指南
+
+   guide/index
+
+.. toctree::
+   :maxdepth: 2
    :caption: 对象模型
 
    objects/index
