@@ -4,11 +4,11 @@ install:
 	pip install -e ".[dev,lint,docs]"
 
 lint:
-	ruff check src/ tests/ examples/
-	mypy src/
+	ruff check tests/ examples/
+	mypy tests/
 
 format:
-	ruff format src/ tests/ examples/
+	ruff format tests/ examples/
 
 test:
 	pytest

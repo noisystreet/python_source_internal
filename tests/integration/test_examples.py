@@ -6,8 +6,10 @@
 
 import subprocess
 import sys
-import pytest
 from pathlib import Path
+from typing import Any
+
+import pytest
 
 EXAMPLES_DIR = Path(__file__).resolve().parent.parent.parent / "examples"
 
@@ -32,7 +34,7 @@ def collect_examples() -> list[Path]:
     return [s for s in scripts if s.name != "__init__.py"]
 
 
-def run_script(script: Path) -> dict:
+def run_script(script: Path) -> dict[str, Any]:
     """运行一个示例脚本，返回结果。"""
     timeout = SLOW_SCRIPTS.get(script.name, 20)
     try:
@@ -65,7 +67,7 @@ _example_scripts = collect_examples()
     "script",
     [pytest.param(s, id=s.name) for s in _example_scripts],
 )
-def test_example_script(script: Path):
+def test_example_script(script: Path) -> None:
     """运行单个示例脚本，验证退出码为 0。"""
     result = run_script(script)
     assert result["returncode"] == 0, (
