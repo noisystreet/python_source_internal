@@ -310,6 +310,15 @@ CPython 3.14 的解决方案是 **平衡引用计数（BRC, Biased Reference Cou
    * - ``Py_CLEAR`` 为什么必要？
      - 先置空指针再 DECREF，防止段错误
 
+
+参考资料
+--------
+
+- :pep:`683` — 永生对象
+- :pep:`703` — 自由线程与平衡引用计数（BRC）
+- :file:`Include/refcount.h` — ``Py_INCREF`` / ``Py_DECREF`` 实现
+- :file:`Include/object.h` — ``ob_refcnt`` 与 ``ob_refcnt_shared`` 字段
+
 下一步
 ------
 

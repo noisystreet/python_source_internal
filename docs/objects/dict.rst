@@ -244,3 +244,12 @@ CPython 使用**线性探测 (Linear Probing)**：
      - dk_entries 按追加顺序排列
    * - 版本号
      - dk_version，用于监控和缓存失效
+
+参考资料
+--------
+
+- :pep:`509` — dict 的私有版本号
+- :file:`Objects/dictobject.c` — dict 完整实现
+- :file:`Include/cpython/dictobject.h` — ``PyDictKeysObject`` 结构定义
+- `GH-26164 <https://github.com/python/cpython/issues/26164>`__ — 分离表与共享键
+

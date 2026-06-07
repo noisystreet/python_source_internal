@@ -167,3 +167,12 @@ JIT 编译的触发条件：
      - 版本号检查，自动失效
    * - 支持哪些平台？
      - x86-64 和 ARM64
+
+参考资料
+--------
+
+- :file:`Python/jit.c` — Copy-and-Patch JIT 编译器
+- :file:`Python/jit_allocator.c` — 机器码内存分配
+- `GH-113464 <https://github.com/python/cpython/issues/113464>`__ — JIT 编译器设计
+- `Copy-and-Patch 论文 <https://dl.acm.org/doi/10.1145/3485513>`__ — 原始论文 (SSW 2021)
+

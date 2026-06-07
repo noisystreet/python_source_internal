@@ -379,3 +379,12 @@ CPython 的"继承"——用 C 实现的单继承
      - 指向全局类型对象，实现动态类型
    * - 怎么实现"一切皆对象"？
      - 每个具体结构以 ``PyObject`` 开头，直接强转
+
+参考资料
+--------
+
+- :pep:`683` — 永生对象（Immortal Objects）
+- :file:`Include/object.h` — ``PyObject`` 与 ``PyVarObject`` 结构定义
+- :file:`Include/refcount.h` — 引用计数宏实现
+- `CPython 对象内存布局 <https://docs.python.org/3/c-api/structures.html>`__
+

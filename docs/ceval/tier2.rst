@@ -172,3 +172,12 @@ executor 的版本号与代码对象的 ``co_version`` 绑定。
      - 循环外提、内联调用、类型传播
    * - Executor 存在哪？
      - 代码对象的 co_executors 字段
+
+参考资料
+--------
+
+- :pep:`659` — 自适应解释器
+- :file:`Python/ceval.c` — ``_PyEval_EvalDefault``（Tier 2 入口）
+- :file:`Python/optimizer.c` — 优化器实现
+- `GH-104584 <https://github.com/python/cpython/issues/104584>`__ — Tier 2 微码
+

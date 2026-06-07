@@ -244,3 +244,12 @@ Tokenizer 在遇到 ``f"`` 时推入 ``TOK_FSTRING_MODE``：
      - ``struct token``，start/end 指向原始缓冲区
    * - Tokenizer 和 Parser 谁先执行？
      - Tokenizer 先，Parser 后
+
+参考资料
+--------
+
+- :pep:`701` — f-string 标记化
+- :file:`Parser/lexer/` — tokenizer 实现目录
+- :file:`Parser/lexer/state.h` — ``tok_state`` 结构定义
+- `CPython 3.14 词法分析器说明 <https://docs.python.org/3.14/reference/lexical_analysis.html>`__
+

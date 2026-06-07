@@ -257,3 +257,12 @@ CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——
      - BINARY_OP_ADD_INT / ADD_FLOAT / ADD_UNICODE
    * - LOAD_ATTR 有哪些特化版本？
      - 字典查找 / 类型插槽 / __slots__ 等
+
+参考资料
+--------
+
+- :pep:`659` — 自适应特化
+- :file:`Python/ceval.c` — 特化缓存的维护与失效
+- :file:`Python/specialize.c` — 特化逻辑实现
+- `GH-28676 <https://github.com/python/cpython/issues/28676>`__ — 内联缓存设计
+

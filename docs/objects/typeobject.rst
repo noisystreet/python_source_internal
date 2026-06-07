@@ -412,4 +412,12 @@ CPython 里有两种"类型"：
    * - ``type(x)`` 为什么快？
      - 直接读 ``x->ob_type``，一次指针解引用
 
+参考资料
+--------
+
+- :pep:`252` — 类型系统与描述符协议
+- :pep:`573` — 模块级状态的 C 访问
+- :file:`Include/object.h` — ``PyTypeObject`` 结构定义
+- :file:`Objects/typeobject.c` — 类型创建与 MRO 计算
+
 现在你理解了类型系统的骨架。下一篇我们将深入 **引用计数**——看看 ``Py_INCREF`` / ``Py_DECREF`` 的具体实现，以及 3.14 中平衡引用计数（BRC）带来的变化。

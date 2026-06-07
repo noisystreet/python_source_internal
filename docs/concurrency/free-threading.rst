@@ -83,3 +83,12 @@ C 扩展需要修改：
 ----------------
 
 无 GIL 构建需要在编译时启用，当前环境为有 GIL 构建。相关概念可通过 :file:`examples/gil_demo.py` 观察 GIL 的行为。
+
+参考资料
+--------
+
+- :pep:`703` — 自由线程 CPython
+- :file:`Python/ceval_gil.c` — ``--disable-gil`` 构建的 GIL 省略
+- :file:`Include/internal/pycore_atomic.h` — 原子操作 API
+- :file:`Objects/object.c` — BRC 平衡引用计数实现
+

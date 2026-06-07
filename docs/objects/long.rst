@@ -250,3 +250,11 @@ CPython 在 ``_PyLong_Init`` 中初始化小整数池：
      - lv_tag 低 2 位
    * - 运算符注册
      - ``long_as_number`` 函数表
+
+参考资料
+--------
+
+- :file:`Include/longintrepr.h` — ``PyLongObject`` 内部表示（digit / lv_tag）
+- :file:`Objects/longobject.c` — 大整数运算实现
+- `Knuth, The Art of Computer Programming, Vol. 2` — 多精度算术算法
+

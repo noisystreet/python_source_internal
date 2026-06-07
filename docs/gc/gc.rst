@@ -268,3 +268,12 @@ CPython 的 GC 提供了丰富的调试支持：
      - 容器对象（PyObject_GC_New 创建的）
    * - 怎么调试？
      - gc.set_debug()、gc.get_objects()、gc.get_referrers()
+
+参考资料
+--------
+
+- :pep:`442` — 安全终结的行为模型
+- :file:`Python/gc.c` — GC 收集器实现
+- :file:`Include/internal/pycore_gc.h` — GC 内部结构
+- `Uniprocessor Garbage Collection Techniques <https://www.cs.utah.edu/~mflatt/papers/iwmm92.pdf>`__ — 分代 GC 基础论文
+

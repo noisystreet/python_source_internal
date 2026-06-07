@@ -161,3 +161,12 @@ CPython 默认每执行 **5ms** 的字节码就尝试切换 GIL。
      - 简化内存管理，简化 C 扩展
    * - 缺点？
      - CPU 密集型无法利用多核
+
+参考资料
+--------
+
+- :pep:`703` — 自由线程（无 GIL）
+- :file:`Python/ceval_gil.c` — GIL 的 take / drop 实现
+- `GIL 切换间隔 <https://docs.python.org/3/library/sys.html#sys.setswitchinterval>`__
+- `Python GIL 的历史 <https://realpython.com/python-gil/>`__
+
