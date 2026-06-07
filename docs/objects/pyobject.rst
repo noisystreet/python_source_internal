@@ -334,6 +334,29 @@ CPython 的"继承"——用 C 实现的单继承
 
 这就是 CPython 对象模型的**核心设计**：**通过统一的头部实现多态，所有对象共享同一套内存管理机制**。
 
+通过示例脚本验证
+----------------
+
+运行 :file:`examples/pyobject_layout.py`：
+
+.. code-block:: text
+
+    --- PyObject 头部大小 ---
+    64 位系统上 PyObject = 16 字节
+    PyVarObject = 24 字节（比 PyObject 多 ob_size）
+
+    --- 具体类型大小 ---
+    int: 28 字节
+    str: 49 字节
+    list: 56 字节
+    dict: 56 字节
+    tuple: 40 字节 (空)
+    object(): 32 字节
+
+    --- 引用计数与类型 ---
+    obj 的引用计数: 1
+    obj 的类型: <class 'object'>
+
 小结
 ----
 
@@ -342,30 +365,17 @@ CPython 的"继承"——用 C 实现的单继承
 
    * - 问题
      - 答案
-     - 关键代码位置
    * - PyObject 最少要存什么？
      - 引用计数 + 类型指针
-     - :file:`Include/object.h`
    * - 64 位系统上多大？
      - 16 字节（含 ob_flags / ob_overflow）
-     - ``struct _object``
    * - 可变长度对象呢？
      - 加 ``ob_size`` → ``PyVarObject``，24 字节
-     - ``PyVarObject``
    * - 引用计数怎么工作？
      - ``Py_INCREF`` / ``Py_DECREF``，减到 0 就回收
-     - :file:`Include/refcount.h`
    * - 什么是 Immortal？
      - 引用计数设极大值，跳过 INC/DEC 操作
-     - ``_Py_IMMORTAL_INITIAL_REFCNT``
    * - ob_type 有什么用？
      - 指向全局类型对象，实现动态类型
-     - ``PyTypeObject``
    * - 怎么实现"一切皆对象"？
      - 每个具体结构以 ``PyObject`` 开头，直接强转
-     - ``PyObject_HEAD`` 宏
-
-下一步
-------
-
-下一步，我们来看 ``ob_type`` 指向的 ``PyTypeObject``（类型对象），它决定了 Python 对象的全部行为。

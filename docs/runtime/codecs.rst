@@ -24,3 +24,23 @@ Codec 系统
             return ...  # 返回 CodecInfo
 
     codecs.register(my_codec)
+
+
+小结
+----
+
+.. list-table::
+   :header-rows: 1
+
+   * - 问题
+     - 答案
+   * - 编码器怎么查找？
+     - 按名称搜索注册表，返回 CodecInfo
+   * - 可以自定义编码吗？
+     - 可以，通过 ``codecs.register`` 注册
+
+通过示例脚本验证
+----------------
+
+运行 :file:`examples/codecs_demo.py`。
+

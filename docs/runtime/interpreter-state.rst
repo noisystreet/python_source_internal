@@ -19,3 +19,23 @@
         struct _Py_unicode_state unicode;     // Unicode 状态
         // ...
     };
+
+
+小结
+----
+
+.. list-table::
+   :header-rows: 1
+
+   * - 问题
+     - 答案
+   * - PyInterpreterState 存什么？
+     - GIL、GC、小整数池、模块缓存、Unicode 状态
+   * - 子解释器？
+     - 每个子解释器有独立的 PyInterpreterState
+
+通过示例脚本验证
+----------------
+
+运行 :file:`examples/import_demo.py` 观察 ``sys.modules``（属于当前解释器）。
+

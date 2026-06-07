@@ -30,3 +30,23 @@ C 扩展开发中最常用到的 API。
     // GC 跟踪的对象
     PyObject *PyObject_GC_New(PyTypeObject *type);
     PyObject *PyObject_GC_NewVar(PyTypeObject *type, Py_ssize_t size);
+
+
+小结
+----
+
+.. list-table::
+   :header-rows: 1
+
+   * - 问题
+     - 答案
+   * - 内存分配 API？
+     - ``PyMem_RawMalloc`` / ``PyObject_Malloc``
+   * - 对象创建 API？
+     - ``PyObject_New`` / ``PyObject_GC_New``
+
+通过示例脚本验证
+----------------
+
+运行 :file:`examples/obmalloc_demo.py` 观察 CPython 的内存分配行为。
+

@@ -30,3 +30,24 @@ CPython 解释器的生命周期分为预初始化、初始化、执行、终结
     → 关闭模块
     → 释放解释器状态
     → _PyRuntimeState_Fini()
+
+
+小结
+----
+
+.. list-table::
+   :header-rows: 1
+
+   * - 问题
+     - 答案
+   * - 启动流程？
+     - Py_InitializeFromConfig → 解释器/线程状态 → 内置模块 → site
+   * - 关闭流程？
+     - 退出函数 → GC → 关闭模块 → 释放状态
+
+通过示例脚本验证
+----------------
+
+解释器生命周期在进程层面体现，可通过 ``sys.prefix``、``sys.executable``
+等属性观察初始化后的环境。
+

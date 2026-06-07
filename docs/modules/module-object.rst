@@ -41,6 +41,19 @@ Python 的模块在 C 层就是 ``PyModuleObject``——一个包装了字典的
     }
 
 通过示例脚本验证
----------------
+----------------
 
 运行 :file:`examples/module_demo.py`。
+
+小结
+----
+
+.. list-table::
+   :header-rows: 1
+
+   * - 问题
+     - 答案
+   * - 模块的本质是什么？
+     - PyModuleObject + __dict__ 命名空间字典
+   * - __dict__ 的作用？
+     - 存储模块的所有属性和函数

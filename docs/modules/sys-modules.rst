@@ -26,6 +26,19 @@ sys.modules 与模块缓存
     import math              # 这次会重新执行 math 模块代码
 
 通过示例脚本验证
----------------
+----------------
 
 运行 :file:`examples/sysmodules_demo.py`。
+
+小结
+----
+
+.. list-table::
+   :header-rows: 1
+
+   * - 问题
+     - 答案
+   * - sys.modules 的作用？
+     - 缓存已导入模块，保证每个模块只加载一次
+   * - 怎么强制重新加载？
+     - ``del sys.modules['modname']`` 再 import

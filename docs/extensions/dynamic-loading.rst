@@ -22,3 +22,25 @@ CPython 通过 ``dlopen``（Linux）或 ``LoadLibrary``（Windows）加载 C 扩
     PyMODINIT_FUNC PyInit_foo(void) {
         return PyModuleDef_Init(&foo_module);
     }
+
+
+小结
+----
+
+.. list-table::
+   :header-rows: 1
+
+   * - 问题
+     - 答案
+   * - 怎么加载扩展？
+     - ``dlopen`` (Linux) / ``LoadLibrary`` (Windows)
+   * - 入口函数是什么？
+     - ``PyInit_<模块名>``
+   * - 模块定义在哪？
+     - ``PyModuleDef`` 结构体
+
+通过示例脚本验证
+----------------
+
+运行 :file:`examples/import_demo.py` 观察模块的导入过程。
+

@@ -51,3 +51,8 @@ CPython 3.14 内部使用多种锁：
 ----
 
 临界区宏是无 GIL 构建下 C 扩展保证线程安全的基础工具。
+
+通过示例脚本验证
+----------------
+
+临界区宏在 Python 层面不可见。无 GIL 构建下，C 扩展通过 ``Py_BEGIN_CRITICAL_SECTION`` / ``Py_END_CRITICAL_SECTION`` 保护共享状态。

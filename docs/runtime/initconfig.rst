@@ -27,3 +27,23 @@
     PyConfig_InitPythonConfig(&config);
     config.isolated = 1;
     Py_InitializeFromConfig(&config);
+
+
+小结
+----
+
+.. list-table::
+   :header-rows: 1
+
+   * - 问题
+     - 答案
+   * - PyConfig 是什么？
+     - 统一的解释器配置结构（Python 3.8+）
+   * - 怎么用？
+     - ``PyConfig_InitPythonConfig`` → 设字段 → ``Py_InitializeFromConfig``
+
+通过示例脚本验证
+----------------
+
+运行 ``python -c "import sys; print(sys.flags)"`` 查看解释器标志。
+

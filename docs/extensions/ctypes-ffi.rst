@@ -19,3 +19,23 @@ ctypes 与外部函数接口
     libc.printf(b"hello\n")  # 调用 C 函数
 
 在 C 层，``ctypes`` 使用 ``libffi`` 库实现统一的函数调用接口。
+
+
+小结
+----
+
+.. list-table::
+   :header-rows: 1
+
+   * - 问题
+     - 答案
+   * - ctypes 怎么调用 C？
+     - 通过 ``dlopen`` 加载动态库 + ``libffi`` 调用
+   * - 安全吗？
+     - 不安全，调用者有责任保证类型匹配
+
+通过示例脚本验证
+----------------
+
+ctypes 使用示例详见 Python 标准库文档。
+

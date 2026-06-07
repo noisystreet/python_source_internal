@@ -29,3 +29,23 @@
         {"add", foo_add, METH_VARARGS, "Add two numbers"},
         {NULL, NULL, 0, NULL}
     };
+
+
+小结
+----
+
+.. list-table::
+   :header-rows: 1
+
+   * - 问题
+     - 答案
+   * - PyModuleDef 包含什么？
+     - 模块名、文档、方法表、GC 回调
+   * - 模块方法表是什么？
+     - ``PyMethodDef`` 数组，定义模块级函数
+
+通过示例脚本验证
+----------------
+
+运行 :file:`examples/module_demo.py` 查看模块元数据。
+

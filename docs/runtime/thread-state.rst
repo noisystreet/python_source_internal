@@ -31,3 +31,23 @@
 
     PyInterpreterState
     └── PyThreadState t1 → PyThreadState t2 → ...
+
+
+小结
+----
+
+.. list-table::
+   :header-rows: 1
+
+   * - 问题
+     - 答案
+   * - PyThreadState 存什么？
+     - 当前帧、异常、GIL 计数、递归深度
+   * - 线程关系？
+     - 每个解释器有一个线程链表
+
+通过示例脚本验证
+----------------
+
+运行 :file:`examples/gil_demo.py` 观察 GIL 对多线程的影响。
+
