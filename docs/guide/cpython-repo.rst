@@ -2,7 +2,7 @@ CPython 源码仓库导览 — 布局、构建与导航
 =================================================
 
 本文是 CPython 源码仓库的**实操导览**，面向第一次打开 CPython 源码树的开发者。
-上一节 :doc:`ARCHITECTURE` 讲述了运行时架构，这一节关注仓库本身——文件在哪、
+上一节 :doc:`/ARCHITECTURE` 讲述了运行时架构，这一节关注仓库本身——文件在哪、
 怎么构建、怎么找代码、怎么调试。
 
 .. mermaid::
@@ -31,25 +31,25 @@ CPython 仓库的顶层目录（排除 `Doc/`、`Tools/` 等辅助目录）：
      - 本项目的文档映射
      - 说明
    * - ``Include/``
-     - :doc:`objects/index`
+     - :doc:`/objects/index`
      - C 头文件。``object.h``（PyObject）、``cpython/``（内部 API）
    * - ``Objects/``
-     - :doc:`objects/index`
+     - :doc:`/objects/index`
      - 内置对象的 C 实现。``object.c``、``longobject.c``、``dictobject.c`` 等
    * - ``Python/``
-     - :doc:`ceval/index`, :doc:`compiler/compiler`
+     - :doc:`/ceval/index`, :doc:`/compiler/compiler`
      - 解释器核心。``ceval.c``（执行引擎）、``compile.c``（编译器）
    * - ``Parser/``
-     - :doc:`compiler/tokenizer`, :doc:`compiler/parser`
+     - :doc:`/compiler/tokenizer`, :doc:`/compiler/parser`
      - 词法分析器（``lexer/``）和 PEG 语法分析器（``pegen.c``）
    * - ``Modules/``
-     - :doc:`modules/index`
+     - :doc:`/modules/index`
      - 内置 C 扩展模块。``_sqlite``、``_ssl``、``_json`` 等
    * - ``Lib/``
      - 不在本项目范围内
      - Python 标准库。``os.py``、``json/``、``asyncio/`` 等
    * - ``Programs/``
-     - :doc:`runtime/lifecycle`
+     - :doc:`/runtime/lifecycle`
      - 入口函数。``python.c``（``main()``）
    * - ``Mac/``, ``PC/``
      - 不覆盖

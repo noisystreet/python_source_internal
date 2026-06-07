@@ -4,7 +4,7 @@
 CPython 通过 ``dlopen``（Linux）或 ``LoadLibrary``（Windows）加载 C 扩展。
 
 第一问：加载流程
----------------
+----------------
 
 .. code-block:: text
 
@@ -15,7 +15,7 @@ CPython 通过 ``dlopen``（Linux）或 ``LoadLibrary``（Windows）加载 C 扩
     → 返回模块对象
 
 第二问：模块初始化函数
--------------------
+----------------------
 
 .. code-block:: c
 

@@ -4,7 +4,7 @@
 ``PyInterpreterState`` 表示一个 Python 解释器实例——每个子解释器对应一个。
 
 第一问：结构
------------
+------------
 
 .. code-block:: c
 
