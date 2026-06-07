@@ -37,5 +37,5 @@
 通过示例脚本验证
 ----------------
 
-运行 :file:`examples/import_demo.py` 观察 ``sys.modules``（属于当前解释器）。
+运行 :file:`examples/import_demo.py` 观察 ``sys.modules`` （属于当前解释器）。
 

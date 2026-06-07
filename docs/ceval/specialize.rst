@@ -2,7 +2,7 @@
 =============================================
 
 CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——指令在运行时
-根据参数的实际类型，将自己替换为**特化版本**。
+根据参数的实际类型，将自己替换为**特化版本** 。
 
 从一道题开始
 ------------
@@ -13,8 +13,8 @@ CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——
         a + b      # 前几次是通用加法，之后变成整数加法特化
 
 前几次执行 ``a + b`` 时，``BINARY_OP`` 是通用版本——它会检查 ``a`` 和 ``b`` 的类型，
-分发到对应的 ``nb_add``。但如果 ``a`` 和 ``b`` 总是整数，CPython 会将这条指令
-**原地替换**为 ``BINARY_OP_ADD_INT``——不再检查类型，直接做整数加法。
+分发到对应的 ``nb_add`` 。但如果 ``a`` 和 ``b`` 总是整数，CPython 会将这条指令
+**原地替换** 为 ``BINARY_OP_ADD_INT``——不再检查类型，直接做整数加法。
 
 .. mermaid::
 
@@ -31,7 +31,7 @@ CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——
 第一问：自适应指令的机制
 ------------------------
 
-每条自适应指令开头有一个**特化计数器**（存储在指令后的缓存槽中）：
+每条自适应指令开头有一个**特化计数器** （存储在指令后的缓存槽中）：
 
 .. code-block:: c
 
@@ -107,7 +107,7 @@ CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——
      - 调用纯 Python 函数
      - 跳过方法展开、直接创建帧
    * - ``CALL_BUILTIN_FAST``
-     - 调用内置 C 函数（如 ``len()``）
+     - 调用内置 C 函数（如 ``len()`` ）
      - 直接调用 ``vectorcall``，零检查
    * - ``CALL_BOUND_METHOD_EXACT_ARGS``
      - 调用绑定的方法
@@ -166,7 +166,7 @@ CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——
 第四问：反特化 (Unspecialization)
 ----------------------------------
 
-如果特化版本发现类型不匹配（例如之前一直是 ``int + int``，但突然来了个 ``str + int``），
+如果特化版本发现类型不匹配（例如之前一直是 ``int + int``，但突然来了个 ``str + int`` ），
 它会**反特化**——把指令恢复为通用版本：
 
 .. code-block:: c
@@ -186,13 +186,13 @@ CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——
         ...
     }
 
-反特化时，CPython 不会恢复到原来的 ``BINARY_OP``，而是**再次调用 ``_Py_Specialize_*``**
+反特化时，CPython 不会恢复到原来的 ``BINARY_OP``，而是**再次调用** ``_Py_Specialize_*``
 重新根据当前类型选择特化版本。这样可以跟踪类型变化的模式。
 
 第五问：LOAD_ATTR 的特化
 -------------------------
 
-属性访问（``obj.attr``）也是特化的重要目标：
+属性访问（``obj.attr`` ）也是特化的重要目标：
 
 .. code-block:: c
 
@@ -212,10 +212,10 @@ CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——
 
 特化后的 ``LOAD_ATTR`` 可以变成：
 
-- ``LOAD_ATTR_MANAGED_DICT``：直接读实例字典
-- ``LOAD_ATTR_INSTANCE_VALUE``：直接从类型插槽中读
-- ``LOAD_ATTR_WITH_HINT``：带缓存提示的属性访问
-- ``LOAD_ATTR_SLOT``：直接读 ``__slots__`` 属性
+- ``LOAD_ATTR_MANAGED_DICT`` ：直接读实例字典
+- ``LOAD_ATTR_INSTANCE_VALUE`` ：直接从类型插槽中读
+- ``LOAD_ATTR_WITH_HINT`` ：带缓存提示的属性访问
+- ``LOAD_ATTR_SLOT`` ：直接读 ``__slots__`` 属性
 
 通过示例脚本验证
 ----------------

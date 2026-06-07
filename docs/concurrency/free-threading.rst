@@ -1,7 +1,7 @@
 自由线程 (Free-Threading) — 无 GIL 的 CPython
 =====================================================
 
-CPython 3.14 引入了实验性的自由线程构建（``--disable-gil``）。
+CPython 3.14 引入了实验性的自由线程构建（``--disable-gil`` ）。
 
 从一道题开始
 ------------
@@ -18,7 +18,7 @@ CPython 3.14 引入了实验性的自由线程构建（``--disable-gil``）。
 第一问：平衡引用计数 (BRC)
 ---------------------------
 
-无 GIL 下最大的挑战是**引用计数**。CPython 引入了**平衡引用计数 (BRC)**：
+无 GIL 下最大的挑战是**引用计数** 。CPython 引入了**平衡引用计数 (BRC)** ：
 
 .. code-block:: c
 
@@ -52,7 +52,7 @@ CPython 3.14 引入了实验性的自由线程构建（``--disable-gil``）。
 
 C 扩展需要修改：
 
-- 使用 ``Py_INCREF`` / ``Py_DECREF``（自动适配 BRC）
+- 使用 ``Py_INCREF`` / ``Py_DECREF`` （自动适配 BRC）
 - 使用 ``Py_BEGIN_CRITICAL_SECTION`` / ``Py_END_CRITICAL_SECTION`` 保护共享状态
 - 避免全局可变变量
 

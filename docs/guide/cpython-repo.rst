@@ -32,25 +32,25 @@ CPython 仓库的顶层目录（排除 `Doc/`、`Tools/` 等辅助目录）：
      - 说明
    * - ``Include/``
      - :doc:`/objects/index`
-     - C 头文件。``object.h``（PyObject）、``cpython/``（内部 API）
+     - C 头文件。``object.h`` （PyObject）、``cpython/`` （内部 API）
    * - ``Objects/``
      - :doc:`/objects/index`
-     - 内置对象的 C 实现。``object.c``、``longobject.c``、``dictobject.c`` 等
+     - 内置对象的 C 实现。``object.c`` 、``longobject.c`` 、``dictobject.c`` 等
    * - ``Python/``
      - :doc:`/ceval/index`, :doc:`/compiler/compiler`
-     - 解释器核心。``ceval.c``（执行引擎）、``compile.c``（编译器）
+     - 解释器核心。``ceval.c`` （执行引擎）、``compile.c`` （编译器）
    * - ``Parser/``
      - :doc:`/compiler/tokenizer`, :doc:`/compiler/parser`
-     - 词法分析器（``lexer/``）和 PEG 语法分析器（``pegen.c``）
+     - 词法分析器（``lexer/`` ）和 PEG 语法分析器（``pegen.c`` ）
    * - ``Modules/``
      - :doc:`/modules/index`
-     - 内置 C 扩展模块。``_sqlite``、``_ssl``、``_json`` 等
+     - 内置 C 扩展模块。``_sqlite`` 、``_ssl`` 、``_json`` 等
    * - ``Lib/``
      - 不在本项目范围内
-     - Python 标准库。``os.py``、``json/``、``asyncio/`` 等
+     - Python 标准库。``os.py`` 、``json/`` 、``asyncio/`` 等
    * - ``Programs/``
      - :doc:`/runtime/lifecycle`
-     - 入口函数。``python.c``（``main()``）
+     - 入口函数。``python.c`` （``main()`` ）
    * - ``Mac/``, ``PC/``
      - 不覆盖
      - 平台特定代码（macOS、Windows）
@@ -175,7 +175,7 @@ CPython 使用 **autoconf + make** 构建系统。核心命令：
 
 ``--with-pydebug`` 会启用：
 
-- 所有断言（``assert``）
+- 所有断言（``assert`` ）
 - 引用计数调试（追踪未释放的对象）
 - ``sys.gettotalrefcount()`` 函数
 - 额外的运行时检查

@@ -2,7 +2,7 @@
 ===============================================
 
 上一节我们看到了 ``CALL`` 指令。这一节深入函数调用的核心——**Vectorcall 协议**，
-以及**栈帧的创建与切换**。
+以及**栈帧的创建与切换** 。
 
 从一道题开始
 ------------
@@ -94,7 +94,7 @@ Vectorcall 的参数传递方式：
     // 判断是否有关键字参数
     bool has_kwargs = nargsf & PY_VECTORCALL_ARGUMENT_MASK;
 
-``args`` 数组的第一个元素可能是 ``self``（方法调用时），也可能直接是参数。
+``args`` 数组的第一个元素可能是 ``self`` （方法调用时），也可能直接是参数。
 
 第三问：函数的帧是如何创建的？
 -------------------------------
@@ -126,11 +126,11 @@ Vectorcall 的参数传递方式：
 ``_PyEvalFramePushAndInit`` 做了关键工作：
 
 #. 从 ``co_framesize`` 知道帧需要多大空间
-#. 在堆上分配 ``_PyInterpreterFrame``（或从自由列表复用）
-#. 设置 ``frame->previous = tstate->current_frame``（形成帧链）
+#. 在堆上分配 ``_PyInterpreterFrame`` （或从自由列表复用）
+#. 设置 ``frame->previous = tstate->current_frame`` （形成帧链）
 #. 将参数从调用者的栈拷贝到新帧的 ``localsplus[]``
-#. 设置 ``instr_ptr`` 指向函数的第一条指令（``RESUME``）
-#. 设置 ``tstate->current_frame = frame``（切换到新帧）
+#. 设置 ``instr_ptr`` 指向函数的第一条指令（``RESUME`` ）
+#. 设置 ``tstate->current_frame = frame`` （切换到新帧）
 
 .. mermaid::
 
@@ -169,7 +169,7 @@ Vectorcall 的参数传递方式：
 第五问：方法的调用（self 绑定）
 -------------------------------
 
-当调用 ``obj.method()`` 时，方法已经是一个 ``PyMethodObject``（bound method）：
+当调用 ``obj.method()`` 时，方法已经是一个 ``PyMethodObject`` （bound method）：
 
 .. code-block:: c
 
@@ -187,7 +187,7 @@ Vectorcall 的参数传递方式：
         // args[-1] = self（使得 self 在参数列表中排第一）
     }
 
-这就是为什么 ``obj.method(args)`` 在 C 层等价于 ``Class.method(obj, args)``。
+这就是为什么 ``obj.method(args)`` 在 C 层等价于 ``Class.method(obj, args)`` 。
 
 第六问：生成器函数的调用差异
 -----------------------------
@@ -205,7 +205,7 @@ Vectorcall 的参数传递方式：
     return _PyEval_EvalFrame(tstate, frame, 0);
 
 生成器调用**不执行函数体**——它只是创建帧并冻结在 ``FRAME_CREATED`` 状态，
-然后返回 ``PyGenObject``。帧的执行延迟到 ``next(gen)`` 被调用时。
+然后返回 ``PyGenObject`` 。帧的执行延迟到 ``next(gen)`` 被调用时。
 
 通过示例脚本验证
 ----------------

@@ -1,7 +1,7 @@
 动态加载机制 — .so / .pyd 的加载
 ==========================================
 
-CPython 通过 ``dlopen``（Linux）或 ``LoadLibrary``（Windows）加载 C 扩展。
+CPython 通过 ``dlopen`` （Linux）或 ``LoadLibrary`` （Windows）加载 C 扩展。
 
 第一问：加载流程
 ----------------

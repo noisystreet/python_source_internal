@@ -84,7 +84,7 @@ CPython 的策略是：
 第三问：mmap vs malloc
 ----------------------
 
-CPython 使用 ``mmap`` 分配 Arena（如果平台支持），而不是 ``malloc``：
+CPython 使用 ``mmap`` 分配 Arena（如果平台支持），而不是 ``malloc`` ：
 
 .. code-block:: c
 

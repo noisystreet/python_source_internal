@@ -22,7 +22,7 @@ Python 的 ``import`` 语句触发了一整套查找、加载、缓存机制。
 第一问：导入入口
 ----------------
 
-``import`` 语句的字节码是 ``IMPORT_NAME``：
+``import`` 语句的字节码是 ``IMPORT_NAME`` ：
 
 .. code-block:: text
 
@@ -32,7 +32,7 @@ Python 的 ``import`` 语句触发了一整套查找、加载、缓存机制。
     6 STORE_NAME  0 (math)
 
 ``IMPORT_NAME`` 调用内置函数 ``__import__``，它在 C 层对应
-``PyImport_ImportModuleLevelObject``。
+``PyImport_ImportModuleLevelObject`` 。
 
 第二问：查找和加载
 ------------------
@@ -42,9 +42,9 @@ CPython 的导入系统分为两步：
 **查找 (Find)**
   ``sys.meta_path`` 中的 finder 依次尝试。
 
-  - ``_frozen_importlib.BuiltinImporter``：内置模块（如 ``sys``）
-  - ``_frozen_importlib.FrozenImporter``：冻结模块
-  - ``_frozen_importlib.PathFinder``：基于 ``sys.path`` 的文件查找
+  - ``_frozen_importlib.BuiltinImporter`` ：内置模块（如 ``sys`` ）
+  - ``_frozen_importlib.FrozenImporter`` ：冻结模块
+  - ``_frozen_importlib.PathFinder`` ：基于 ``sys.path`` 的文件查找
 
 **加载 (Load)**
   Finder 返回一个 spec（模块规格），传给 Loader 执行。
@@ -62,7 +62,7 @@ CPython 的导入系统分为两步：
     import sys
     sys.modules['math']  # 已导入的模块
 
-``IMPORT_NAME`` 的第一步就是检查 ``sys.modules``。如果存在，直接返回。
+``IMPORT_NAME`` 的第一步就是检查 ``sys.modules`` 。如果存在，直接返回。
 否则继续查找和加载。
 
 通过示例脚本验证

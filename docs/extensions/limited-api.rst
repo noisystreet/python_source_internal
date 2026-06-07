@@ -21,7 +21,7 @@ Stable ABI 是 Limited API 的二进制接口，一次编译可在多个 CPython
 第一问：版本宏的定义
 --------------------
 
-``Py_LIMITED_API`` 的格式是 ``0x03MMmm0000``：
+``Py_LIMITED_API`` 的格式是 ``0x03MMmm0000`` ：
 
 .. code-block:: c
 
@@ -83,7 +83,7 @@ Stable ABI 是 Limited API 的二进制接口，一次编译可在多个 CPython
 Stable ABI 通过定义 ABI 稳定的函数集合实现跨版本兼容。关键在于：
 
 - 所有 Stable ABI 函数以 ``Py``/** 或 ``_Py``/** 前缀导出为动态符号
-- Windows 上通过 ``python3.dll``（非 ``python3xx.dll``）加载这些符号
+- Windows 上通过 ``python3.dll`` （非 ``python3xx.dll`` ）加载这些符号
 - Linux 上通过 ``libpython3.14d.so`` 导出
 
 .. code-block:: bash

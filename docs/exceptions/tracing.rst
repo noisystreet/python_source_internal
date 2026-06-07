@@ -2,7 +2,7 @@ sys.settrace / sys.setprofile — 追踪与性能分析
 ====================================================
 
 ``sys.settrace`` 和 ``sys.setprofile`` 允许在代码执行时设置回调函数，
-用于调试器（如 ``pdb``）和性能分析器（如 ``cProfile``）。
+用于调试器（如 ``pdb`` ）和性能分析器（如 ``cProfile`` ）。
 
 从一道题开始
 ------------
@@ -91,8 +91,8 @@ Python 定义了以下几种追踪事件：
         }
     }
 
-``sys.settrace`` 设置 ``tstate->c_tracefunc``。当这个字段非空时，
-解释器在每次 ``call``、``return``、``line``、``exception`` 事件发生时
+``sys.settrace`` 设置 ``tstate->c_tracefunc`` 。当这个字段非空时，
+解释器在每次 ``call`` 、``return`` 、``line`` 、``exception`` 事件发生时
 调用这个函数。
 
 第三问：setprofile 与 settrace 的区别

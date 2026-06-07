@@ -19,7 +19,7 @@
     print(a.x)  # 10 — 从类属性字典找到
     print(a.y)  # 42 — 属性访问被完全改变了！
 
-为什么 ``a.x`` 和 ``a.y`` 的访问路径完全不同？因为 ``property`` 是一个**描述符**（descriptor）——它实现了 ``__get__`` 方法，从而劫持了属性查找过程。
+为什么 ``a.x`` 和 ``a.y`` 的访问路径完全不同？因为 ``property`` 是一个**描述符** （descriptor）——它实现了 ``__get__`` 方法，从而劫持了属性查找过程。
 
 .. mermaid::
 
@@ -76,14 +76,14 @@
 **数据描述符 (Data Descriptor)**
   同时实现了 ``__get__`` 和 ``__set__`` / ``__delete__``
 
-  - 例如：``property``、``member``（C 结构体成员）
-  - **优先级高于实例字典**：即使 ``obj.__dict__`` 中有同名属性，数据描述符也会覆盖它
+  - 例如：``property`` 、``member`` （C 结构体成员）
+  - **优先级高于实例字典** ：即使 ``obj.__dict__`` 中有同名属性，数据描述符也会覆盖它
 
 **非数据描述符 (Non-Data Descriptor)**
   只实现了 ``__get__``
 
-  - 例如：普通方法（``function`` 类型）、``staticmethod``、``classmethod``
-  - **优先级低于实例字典**：如果 ``obj.__dict__`` 中有同名属性，优先使用实例字典中的值
+  - 例如：普通方法（``function`` 类型）、``staticmethod`` 、``classmethod``
+  - **优先级低于实例字典** ：如果 ``obj.__dict__`` 中有同名属性，优先使用实例字典中的值
 
 .. mermaid::
 
@@ -99,7 +99,7 @@
 第三问：属性查找的 C 层实现
 ---------------------------
 
-CPython 的属性查找默认走 ``PyObject_GenericGetAttr``：
+CPython 的属性查找默认走 ``PyObject_GenericGetAttr`` ：
 
 .. code-block:: c
 
@@ -147,7 +147,7 @@ CPython 的属性查找默认走 ``PyObject_GenericGetAttr``：
         return _PyObject_GenericGetAttrWithDict(obj, name, dict, 1);
     }
 
-这个函数清晰地展示了属性查找的**五步优先级**。
+这个函数清晰地展示了属性查找的**五步优先级** 。
 
 第四问：方法调用也是描述符
 --------------------------
@@ -164,9 +164,9 @@ CPython 的属性查找默认走 ``PyObject_GenericGetAttr``：
     print(obj.method)   # <bound method ...>
     print(MyClass.method)  # <function ... at 0x...>
 
-``obj.method`` 和 ``MyClass.method`` 返回不同的东西——因为 ``function`` 类型实现了 ``__get__``（非数据描述符）。
+``obj.method`` 和 ``MyClass.method`` 返回不同的东西——因为 ``function`` 类型实现了 ``__get__`` （非数据描述符）。
 
-在 C 层，``PyFunctionObject`` 的 ``tp_descr_get`` 指向 ``func_descr_get``：
+在 C 层，``PyFunctionObject`` 的 ``tp_descr_get`` 指向 ``func_descr_get`` ：
 
 .. code-block:: c
 
@@ -182,7 +182,7 @@ CPython 的属性查找默认走 ``PyObject_GenericGetAttr``：
         return PyMethod_New(func, obj);
     }
 
-``PyMethod_New`` 创建一个 ``PyMethodObject``（方法对象），它包装了函数和实例。
+``PyMethod_New`` 创建一个 ``PyMethodObject`` （方法对象），它包装了函数和实例。
 当你调用 ``bound_method()`` 时，实例自动作为第一个参数传入。
 
 .. code-block:: c
@@ -209,7 +209,7 @@ CPython 的属性查找默认走 ``PyObject_GenericGetAttr``：
 第五问：property 的 C 实现
 --------------------------
 
-``property`` 是最常用的自定义描述符。在 C 层，它是一个 ``propertyobject``：
+``property`` 是最常用的自定义描述符。在 C 层，它是一个 ``propertyobject`` ：
 
 .. code-block:: c
 
@@ -244,7 +244,7 @@ CPython 的属性查找默认走 ``PyObject_GenericGetAttr``：
     }
 
 当你写 ``@property`` 时，Python 在字节码层面创建 ``property(fget)`` 对象，
-然后把它赋值给类属性。从此所有属性访问都经过 ``property_descr_get``。
+然后把它赋值给类属性。从此所有属性访问都经过 ``property_descr_get`` 。
 
 第六问：staticmethod 和 classmethod 也是描述符
 ----------------------------------------------
@@ -260,13 +260,13 @@ CPython 的属性查找默认走 ``PyObject_GenericGetAttr``：
         @classmethod
         def g(cls): pass       # 接收 cls 而非 self
 
-**staticmethod**：``tp_descr_get`` 直接返回被包装的函数，不创建 bound method。
+**staticmethod** ：``tp_descr_get`` 直接返回被包装的函数，不创建 bound method。
 这样 ``obj.f()`` 和 ``MyClass.f()`` 行为一致——都直接调用函数。
 
-**classmethod**：``tp_descr_get`` 创建一个 bound method，但第一个参数绑定的是类（``type(obj)``），
-而不是实例（``obj``）。
+**classmethod** ：``tp_descr_get`` 创建一个 bound method，但第一个参数绑定的是类（``type(obj)`` ），
+而不是实例（``obj`` ）。
 
-在 C 层，这对应两个不同的类型：``PyStaticMethod_Type`` 和 ``PyClassMethod_Type``。
+在 C 层，这对应两个不同的类型：``PyStaticMethod_Type`` 和 ``PyClassMethod_Type`` 。
 
 .. code-block:: c
 
@@ -292,8 +292,8 @@ CPython 的属性查找默认走 ``PyObject_GenericGetAttr``：
 
 CPython 内部还有两种 C 级别的描述符，用于暴露 C 结构体成员：
 
-**PyMemberDescrObject**（基于 ``PyMemberDef``）：
-  对应 C 结构体的成员变量。例如 ``object.__dict__``、``func.__name__``。
+**PyMemberDescrObject** （基于 ``PyMemberDef`` ）：
+  对应 C 结构体的成员变量。例如 ``object.__dict__`` 、``func.__name__`` 。
 
 .. code-block:: c
 
@@ -309,7 +309,7 @@ CPython 内部还有两种 C 级别的描述符，用于暴露 C 结构体成员
         {NULL}
     };
 
-**PyGetSetDescrObject**（基于 ``PyGetSetDef``）：
+**PyGetSetDescrObject** （基于 ``PyGetSetDef`` ）：
   对应 C 结构体的"属性"——有 getter 和 setter 函数。
 
 .. code-block:: c
@@ -325,7 +325,7 @@ CPython 内部还有两种 C 级别的描述符，用于暴露 C 结构体成员
         {NULL}
     };
 
-这两种描述符都是**数据描述符**（同时实现了 get 和 set），所以优先级高于实例字典。
+这两种描述符都是**数据描述符** （同时实现了 get 和 set），所以优先级高于实例字典。
 
 通过示例脚本验证
 ----------------

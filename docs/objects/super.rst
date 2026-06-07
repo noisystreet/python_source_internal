@@ -1,7 +1,7 @@
 super() 的底层实现 — MRO 与方法解析
 ============================================
 
-``super()`` 是 Python 中处理**协作多继承**（cooperative multiple inheritance）的关键机制。
+``super()`` 是 Python 中处理**协作多继承** （cooperative multiple inheritance）的关键机制。
 在 C 层，``super()`` 返回一个 ``super`` 对象，它根据 MRO（方法解析顺序）委托方法调用。
 
 从一道题开始
@@ -34,9 +34,9 @@ super() 的底层实现 — MRO 与方法解析
 
 ``super()`` 的核心就是三个指针：
 
-- ``type``：你在哪个类中调用了 ``super()``（即包含 ``super()`` 的类）
-- ``obj``：当前实例（``self``）
-- ``obj_type``：实例的实际类型（``type(self)``）
+- ``type`` ：你在哪个类中调用了 ``super()`` （即包含 ``super()`` 的类）
+- ``obj`` ：当前实例（``self`` ）
+- ``obj_type`` ：实例的实际类型（``type(self)`` ）
 
 第二问：属性查找过程
 -----------------------

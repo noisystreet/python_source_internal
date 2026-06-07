@@ -42,7 +42,7 @@ sys.modules 与模块缓存
 第二问：sys.modules 的键值结构
 -------------------------------
 
-``sys.modules`` 是一个普通的 ``dict``：
+``sys.modules`` 是一个普通的 ``dict`` ：
 
 .. code-block:: python
 
@@ -54,7 +54,7 @@ sys.modules 与模块缓存
     >>> sys.modules['math']
     <module 'math' from '/usr/lib/python3.14/math.py'>
 
-键是模块名（``str``），值是模块对象（``PyModuleObject``）。
+键是模块名（``str`` ），值是模块对象（``PyModuleObject`` ）。
 对于子模块如 ``os.path``，键是 ``'os.path'``，值是 ``os.path`` 模块对象本身。
 
 第三问：缓存的清理与重载

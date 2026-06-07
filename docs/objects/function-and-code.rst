@@ -8,10 +8,10 @@
     def add(a, b):
         return a + b
 
-但这一行代码在 CPython 中创建了**两个对象**：
+但这一行代码在 CPython 中创建了**两个对象** ：
 
-- 一个 ``PyFunctionObject``（函数对象）—— 就是 ``add``
-- 一个 ``PyCodeObject``（代码对象）—— 藏在 ``add.__code__`` 里
+- 一个 ``PyFunctionObject`` （函数对象）—— 就是 ``add``
+- 一个 ``PyCodeObject`` （代码对象）—— 藏在 ``add.__code__`` 里
 
 这一节我们就拆开这两个结构体，看看到底存了什么。
 
@@ -32,8 +32,8 @@
 
 **因为它们的职责完全不同：**
 
-- ``PyCodeObject`` 是**静态的**：存着编译后的字节码、常量、变量名——一旦编译好就不再改变
-- ``PyFunctionObject`` 是**动态的**：存着函数名、默认参数、闭包、全局命名空间——每次 ``def`` 执行时创建
+- ``PyCodeObject`` 是**静态的** ：存着编译后的字节码、常量、变量名——一旦编译好就不再改变
+- ``PyFunctionObject`` 是**动态的** ：存着函数名、默认参数、闭包、全局命名空间——每次 ``def`` 执行时创建
 
 .. mermaid::
 
@@ -73,31 +73,31 @@
 核心字段可以分为几组：
 
 **命名空间（决定变量在哪里找）**
-  - ``func_globals``：``def`` 语句所在位置的 ``globals()``
-  - ``func_builtins``：内置函数（``print``、``len`` 等）
+  - ``func_globals`` ：``def`` 语句所在位置的 ``globals()``
+  - ``func_builtins`` ：内置函数（``print`` 、``len`` 等）
 
 **代码**
-  - ``func_code``：指向 ``PyCodeObject``
+  - ``func_code`` ：指向 ``PyCodeObject``
 
 **参数**
-  - ``func_defaults``：``def add(a, b=1)`` 中的 ``(1,)``
-  - ``func_kwdefaults``：``def f(**kw)`` 中的关键字默认值
+  - ``func_defaults`` ：``def add(a, b=1)`` 中的 ``(1,)``
+  - ``func_kwdefaults`` ：``def f(**kw)`` 中的关键字默认值
 
 **闭包**
-  - ``func_closure``：嵌套函数捕获的外部变量
+  - ``func_closure`` ：嵌套函数捕获的外部变量
 
 **调用优化**
-  - ``vectorcall``：一个精心优化的函数调用入口，比传统的 ``tp_call`` 更快
+  - ``vectorcall`` ：一个精心优化的函数调用入口，比传统的 ``tp_call`` 更快
 
 .. tip::
 
-   你可以手动查看函数的 ``__code__``、``__globals__``、``__closure__`` 等属性。
+   你可以手动查看函数的 ``__code__`` 、``__globals__`` 、``__closure__`` 等属性。
    下一节的示例脚本会演示如何在 Python 层观察这些字段。
 
 第二问：PyCodeObject 里有什么？
 -------------------------------
 
-代码对象的结构要复杂得多。它也是一个 ``PyVarObject``（变长对象），因为末尾的字节码数组长度可变。
+代码对象的结构要复杂得多。它也是一个 ``PyVarObject`` （变长对象），因为末尾的字节码数组长度可变。
 
 .. code-block:: c
 
@@ -180,10 +180,10 @@
 .. note::
 
    **代码对象是在编译时创建的**——``def`` 所在模块被 ``import`` 或执行时，
-   整个模块的源代码被编译成字节码，每个函数体对应一个 ``PyCodeObject``。
+   整个模块的源代码被编译成字节码，每个函数体对应一个 ``PyCodeObject`` 。
    然后执行到 ``MAKE_FUNCTION`` 时，才用代码对象创建函数对象。
 
-这就是为什么**一个 ``def`` 语句同时涉及编译器和运行时**。
+这就是为什么**一个 ``def`` 语句同时涉及编译器和运行时** 。
 
 第四问：函数是怎么被调用的？
 ----------------------------
@@ -294,7 +294,7 @@ Cell 对象本身就是一个简单的结构体：
 
     # f.__annotations__ == {'x': int, 'return': str}
 
-在 C 层，这是在编译时就准备好的字典，直接赋值给 ``func_annotations``。
+在 C 层，这是在编译时就准备好的字典，直接赋值给 ``func_annotations`` 。
 
 通过示例脚本验证
 ----------------

@@ -26,7 +26,7 @@ GIL（Global Interpreter Lock）是 CPython 中最著名也最有争议的设计
     print(counter)  # 2000000 吗？
 
 有了 GIL，``counter += 1`` 在字节码层面被保护——同一时刻只有一个线程执行它。
-但结果可能不是 2000000，因为 ``counter += 1`` 在字节码中是三条指令（``LOAD`` / ``ADD`` / ``STORE``），
+但结果可能不是 2000000，因为 ``counter += 1`` 在字节码中是三条指令（``LOAD`` / ``ADD`` / ``STORE`` ），
 GIL 在线程切换时并不能保证这三条指令的原子性。
 
 .. mermaid::
@@ -56,7 +56,7 @@ GIL 的核心是一个条件变量（condition variable）+ 一个互斥锁：
         unsigned long switch_number;  // 切换次数
     };
 
-GIL 本身不复杂——它就是一个**被条件变量保护的互斥锁**。
+GIL 本身不复杂——它就是一个**被条件变量保护的互斥锁** 。
 
 第二问：GIL 的获取和释放
 ------------------------
@@ -152,7 +152,7 @@ CPython 默认每执行 **5ms** 的字节码就尝试切换 GIL。
    * - GIL 是什么？
      - 全局解释器锁，确保同一时刻只有一个线程执行字节码
    * - 结构？
-     - ``_gil_runtime_state``（locked + cond + interval）
+     - ``_gil_runtime_state`` （locked + cond + interval）
    * - 切换间隔？
      - 默认 5ms
    * - 什么时候切换？
