@@ -2,9 +2,14 @@
 ========
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
-   小块内存分配 (obmalloc) <obmalloc>
-   分代垃圾回收 <gc>
-   环形引用检测 <gc-cycles>
-   内存池与 arena <arena>
+   obmalloc
+   gc
+   gc-cycles
+   arena
+
+- :doc:`obmalloc` — 小块内存分配 (obmalloc)
+- :doc:`gc` — 分代垃圾回收
+- :doc:`gc-cycles` — 环形引用检测
+- :doc:`arena` — 内存池与 arena

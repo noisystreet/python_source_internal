@@ -2,6 +2,8 @@
 ========
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
-   CPython 源码仓库导览 <cpython-repo>
+   cpython-repo
+
+- :doc:`cpython-repo` — CPython 源码仓库导览

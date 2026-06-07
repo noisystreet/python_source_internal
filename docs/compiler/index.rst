@@ -2,11 +2,18 @@
 ========
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
-   Tokenizer <tokenizer>
-   语法分析器 (Parser) <parser>
-   抽象语法树 (AST) <ast>
-   符号表 (Symtable) <symtable>
-   字节码生成 (Compiler) <compiler>
-   导入机制 <import>
+   tokenizer
+   parser
+   ast
+   symtable
+   compiler
+   import
+
+- :doc:`tokenizer` — 词法分析器
+- :doc:`parser` — 语法分析器 (Parser)
+- :doc:`ast` — 抽象语法树 (AST)
+- :doc:`symtable` — 符号表
+- :doc:`compiler` — 字节码生成
+- :doc:`import` — 导入机制

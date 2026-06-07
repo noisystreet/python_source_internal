@@ -2,8 +2,12 @@
 ========
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
-   模块对象与命名空间 <module-object>
-   内置模块 (built-in) <builtins>
-   sys.modules 与模块缓存 <sys-modules>
+   module-object
+   builtins
+   sys-modules
+
+- :doc:`module-object` — 模块对象与命名空间
+- :doc:`builtins` — 内置模块 (built-in)
+- :doc:`sys-modules` — sys.modules 与模块缓存

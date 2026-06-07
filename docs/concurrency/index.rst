@@ -2,9 +2,14 @@
 ==========
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
-   GIL 设计与实现 <gil>
-   自由线程 (Free-Threading) <free-threading>
-   临界区与锁 <critical-section>
-   async/await 底层实现 <async>
+   gil
+   free-threading
+   critical-section
+   async
+
+- :doc:`gil` — GIL 设计与实现
+- :doc:`free-threading` — 自由线程 (Free-Threading)
+- :doc:`critical-section` — 临界区与锁
+- :doc:`async` — async/await 底层实现

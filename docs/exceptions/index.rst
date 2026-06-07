@@ -2,9 +2,14 @@
 ==========
 
 .. toctree::
-   :maxdepth: 2
+   :hidden:
 
-   异常处理链 <exception-handling>
-   Traceback 与栈展开 <traceback>
-   sys.settrace / sys.setprofile <tracing>
-   调试支持 <remote-debug>
+   exception-handling
+   traceback
+   tracing
+   remote-debug
+
+- :doc:`exception-handling` — 异常处理链
+- :doc:`traceback` — Traceback 与栈展开
+- :doc:`tracing` — sys.settrace / sys.setprofile
+- :doc:`remote-debug` — 调试支持
