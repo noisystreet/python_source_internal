@@ -9,5 +9,5 @@
    sys-modules
 
 - :doc:`module-object` — 模块对象与命名空间
-- :doc:`builtins` — 内置模块
+- :doc:`builtins` — 内置模块与导入管道（BuiltinImporter / FrozenImporter / importlib 自举）
 - :doc:`sys-modules` — sys.modules 与模块缓存
