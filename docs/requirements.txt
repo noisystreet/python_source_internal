@@ -1,0 +1,2 @@
+# Read the Docs 安装依赖（通过 .readthedocs.yaml 从 pyproject.toml 安装）
+# 此文件留作备用/覆盖
