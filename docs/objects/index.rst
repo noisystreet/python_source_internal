@@ -17,3 +17,5 @@
    内置类型 — set <set>
    弱引用 <weakref>
    属性访问与描述符 <descriptor>
+   __slots__ 的底层实现 <slots>
+   super() 的底层实现 <super>

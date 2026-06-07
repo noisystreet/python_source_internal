@@ -1,14 +1,15 @@
 CPython 源码架构总览
 =====================
 
-本文档描述 CPython 解释器的整体架构与核心子系统，作为源码解读的索引地图。
+本文档描述 CPython 3.14 解释器的整体架构与核心子系统，作为整套源码解读的**索引地图**。
+每个子系统的索引页包含该子系统全部章节的入口链接。
 
 目标与非目标
 ------------
 
 **目标**
 
-* 梳理 CPython 主版本（3.x）的核心实现机制
+* 梳理 CPython 3.14 的核心实现机制
 * 为每个子系统提供「高层理解 → 关键结构 → 流程拆解」的渐进式解读
 * 配套可运行的示例脚本，验证和演示文档所述机制
 
@@ -18,71 +19,124 @@ CPython 源码架构总览
 * 不覆盖 CPython 标准库的全部模块（聚焦解释器核心而非纯 Python 库）
 * 不替代 CPython 官方文档
 
-分层架构概览
-------------
+从源码到执行：完整数据流
+------------------------
 
 .. mermaid::
 
-   graph TD
-       subgraph 应用层
-           Bytecode["Python 字节码<br/>(由 py_compile 或交互式编译产生)"]
-       end
-       subgraph 编译层
-           Compiler["编译器 / 语法 & 符号分析<br/>Parser / Compiler / Symtable"]
-       end
-       subgraph 执行层
-           CEval["字节码执行引擎<br/>ceval.c (核心解释循环)"]
-       end
-       subgraph 运行时支撑层
-           Runtime["运行时支撑系统<br/>对象模型 / 内存管理 / 异常 / 模块"]
-       end
-       subgraph 系统层
-           Sys["底层基础抽象层<br/>多线程(GIL) / I/O / 系统调用"]
-       end
+    flowchart LR
+        py["source.py"] --> tokenizer["Tokenizer<br/>Parser/lexer/"]
+        tokenizer --> parser["PEG Parser<br/>Parser/pegen.c"]
+        parser --> ast["AST<br/>Python-ast.c"]
+        ast --> symtable["Symtable<br/>Python/symtable.c"]
+        symtable --> compiler["Compiler<br/>Python/compile.c"]
+        compiler --> bc["PyCodeObject<br/>（字节码 + 异常表）"]
+        bc --> ceval["ceval<br/>Python/ceval.c"]
+        ceval --> result["执行结果"]
+        ceval --> objects["PyObject<br/>对象系统支撑"]
 
-       Bytecode --> Compiler
-       Compiler --> CEval
-       CEval --> Runtime
-       Runtime --> Sys
-
-核心子系统
+子系统索引
 ----------
 
-1. 对象模型 (Objects/)
-    * ``PyObject`` 与 ``PyTypeObject`` 结构
-    * 引用计数与垃圾回收
-    * 内置类型实现（int、str、dict、list 等）
-    * 描述符协议与属性访问
+.. list-table::
+   :header-rows: 1
 
-2. 字节码执行引擎 (Python/ceval.c)
-    * 解释循环主流程
-    * 核心字节码指令分析
-    * 调用约定的实现
+   * - 子系统
+     - 章节数
+     - 核心源码路径
+     - 入口
+   * - 对象模型
+     - 13
+     - ``Include/``, ``Objects/``
+     - :doc:`objects/index`
+   * - 字节码执行引擎
+     - 6
+     - ``Python/ceval.c``
+     - :doc:`ceval/index`
+   * - 内存管理
+     - 4
+     - ``Objects/obmalloc.c``, ``Python/gc.c``
+     - :doc:`gc/index`
+   * - 编译系统
+     - 6
+     - ``Parser/``, ``Python/compile.c``
+     - :doc:`compiler/index`
+   * - 并发与并行
+     - 4
+     - ``Python/ceval_gil.c``
+     - :doc:`concurrency/index`
+   * - 异常与调试
+     - 4
+     - ``Python/errors.c``, ``Python/ceval.c``
+     - :doc:`exceptions/index`
+   * - 模块系统
+     - 3
+     - ``Python/import.c``, ``Objects/moduleobject.c``
+     - :doc:`modules/index`
+   * - 扩展与 C API
+     - 7
+     - ``Include/``, ``Python/modsupport.c``
+     - :doc:`extensions/index`
+   * - 运行时系统
+     - 6
+     - ``Python/pylifecycle.c``, ``Python/pystate.c``
+     - :doc:`runtime/index`
 
-3. 内存管理 (Objects/obmalloc.c)
-    * 小块内存分配（arena / pool / block）
-    * 垃圾回收分代机制
-    * 环形引用检测
+关键数据结构交叉索引
+--------------------
 
-4. 编译系统 (Python/ 编译器前端)
-    * Tokenizer → Parser → AST → 符号表 → 字节码
-    * 编译器优化（peephole）
-    * 导入机制与模块缓存
+下面列出 CPython 最核心的数据结构，以及它们在文档中的位置。
 
-5. 多线程与并发
-    * GIL 设计与实现
-    * 线程安全与同步原语
-    * async/await 底层实现
+.. list-table::
+   :header-rows: 1
 
-6. 异常与调试
-    * 异常处理链（try / except / finally）
-    * Traceback 对象与栈展开
-    * sys.settrace / sys.setprofile 机制
+   * - 结构名
+     - 所在头文件
+     - 说明
+     - 文档入口
+   * - ``PyObject``
+     - ``Include/object.h``
+     - 所有 Python 对象的基类（ob_refcnt + ob_type）
+     - :doc:`objects/pyobject`
+   * - ``PyTypeObject``
+     - ``Include/object.h``
+     - 类型对象，决定对象行为（tp_* 函数指针表）
+     - :doc:`objects/typeobject`
+   * - ``_PyInterpreterFrame``
+     - ``Include/internal/pycore_interpframe_structs.h``
+     - 函数调用的帧（instr_ptr / stackpointer / localsplus）
+     - :doc:`ceval/ceval-loop`
+   * - ``PyCodeObject``
+     - ``Include/cpython/code.h``
+     - 编译产物：字节码 + 常量 + 异常表
+     - :doc:`compiler/compiler`
+   * - ``struct tok_state``
+     - ``Parser/lexer/state.h``
+     - Tokenizer 状态：缓冲区 / 缩进栈 / f-string 模式栈
+     - :doc:`compiler/tokenizer`
+   * - ``struct symtable``
+     - ``Include/internal/pycore_symtable.h``
+     - 符号表：作用域与名字绑定
+     - :doc:`compiler/symtable`
+   * - ``PyGC_Head``
+     - ``Include/internal/pycore_gc.h``
+     - GC 链表节点（嵌入在容器对象中）
+     - :doc:`gc/gc`
+   * - ``struct _gil_runtime_state``
+     - ``Python/ceval_gil.c``
+     - GIL 状态：locked / cond / interval
+     - :doc:`concurrency/gil`
+   * - ``PyThreadState``
+     - ``Include/cpython/pystate.h``
+     - 线程状态：当前帧 / 异常 / GIL 计数
+     - :doc:`runtime/thread-state`
+   * - ``PyInterpreterState``
+     - ``Include/internal/pycore_interp.h``
+     - 解释器状态：模块缓存 / GC / Unicode / int 池
+     - :doc:`runtime/interpreter-state`
 
-代码仓库对应关系
-----------------
-
-CPython 源码布局与本项目的文档映射：
+CPython 源码布局与本项目文档的映射
+-----------------------------------
 
 .. list-table::
    :header-rows: 1
@@ -90,18 +144,68 @@ CPython 源码布局与本项目的文档映射：
    * - CPython 目录
      - 本项目文档
      - 说明
-   * - ``Include/``
-     - ``docs/objects/``
-     - C 头文件定义的结构与宏
+   * - ``Include/object.h``, ``Include/cpython/``
+     - :doc:`objects/pyobject`, :doc:`objects/typeobject`
+     - 对象系统 C 头文件定义
    * - ``Objects/``
-     - ``docs/objects/``
+     - :doc:`objects/index`
      - 内置对象的 C 实现
-   * - ``Python/``
-     - ``docs/compiler/``, ``docs/ceval/``
-     - 编译器与执行引擎
+   * - ``Python/ceval.c``
+     - :doc:`ceval/index`
+     - 字节码执行引擎
+   * - ``Python/compile.c``, ``Python/symtable.c``
+     - :doc:`compiler/compiler`, :doc:`compiler/symtable`
+     - 编译器后端
    * - ``Parser/``
-     - ``docs/compiler/``
-     - 语法分析器
+     - :doc:`compiler/tokenizer`, :doc:`compiler/parser`
+     - 词法 & 语法分析器
+   * - ``Python/gc.c``, ``Objects/obmalloc.c``
+     - :doc:`gc/index`
+     - 内存管理与垃圾回收
+   * - ``Python/ceval_gil.c``
+     - :doc:`concurrency/gil`
+     - GIL 实现
+   * - ``Python/errors.c``
+     - :doc:`exceptions/exception-handling`
+     - 异常处理机制
+   * - ``Python/pylifecycle.c``, ``Python/pystate.c``
+     - :doc:`runtime/index`
+     - 运行时生命周期
+
+示例脚本索引
+------------
+
+所有示例脚本位于 :file:`examples/` 目录，可以通过冒烟测试一次性运行：
+
+.. code-block:: bash
+
+    make test      # 运行全部 39 个示例脚本
+    make lint      # ruff + mypy 代码检查
+    make docs      # 构建 HTML 文档
+
+各子系统对应的示例脚本：
+
+.. list-table::
+   :header-rows: 1
+
+   * - 子系统
+     - 示例脚本
+   * - 对象模型
+     - ``pyobject_layout.py``, ``refcount_demo.py``, ``typeobject_demo.py``, ``function_code_demo.py``, ``iterator_generator_demo.py``, ``weakref_demo.py``, ``longobject_demo.py``, ``unicode_demo.py``, ``dict_demo.py``, ``list_demo.py``, ``tuple_set_demo.py``, ``descriptor_demo.py``
+   * - 字节码执行引擎
+     - ``ceval_loop_demo.py``, ``bytecodes_demo.py``, ``calls_demo.py``, ``specialize_demo.py``, ``tier2_demo.py``, ``jit_demo.py``
+   * - 内存管理
+     - ``obmalloc_demo.py``, ``gc_demo.py``, ``gc_cycles_demo.py``, ``arena_demo.py``
+   * - 编译系统
+     - ``tokenizer_demo.py``, ``parser_demo.py``, ``ast_demo.py``, ``symtable_demo.py``, ``compiler_demo.py``, ``import_demo.py``
+   * - 并发与并行
+     - ``gil_demo.py``, ``async_demo.py``
+   * - 异常与调试
+     - ``exception_demo.py``, ``traceback_demo.py``, ``tracing_demo.py``, ``debug_demo.py``
+   * - 模块系统
+     - ``module_demo.py``, ``sysmodules_demo.py``
+   * - 运行时系统
+     - ``marshal_demo.py``, ``codecs_demo.py``
 
 获取 CPython 源码
 ------------------
@@ -110,7 +214,6 @@ CPython 源码布局与本项目的文档映射：
 
 .. code-block:: bash
 
-    # 在当前项目根目录下执行
     git clone -b v3.14.5 https://github.com/python/cpython.git
 
 设置 ``CPYTHON_SRC`` 环境变量指向该目录后，示例脚本可通过该变量引用 C 头文件：
