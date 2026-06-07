@@ -10,6 +10,7 @@
    symtable
    compiler
    import
+   pattern-matching
 
 - :doc:`tokenizer` — 词法分析器
 - :doc:`parser` — 语法分析器
@@ -17,3 +18,4 @@
 - :doc:`symtable` — 符号表
 - :doc:`compiler` — 字节码生成
 - :doc:`import` — 导入机制
+- :doc:`pattern-matching` — match/case 模式匹配

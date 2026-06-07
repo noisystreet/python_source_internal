@@ -17,6 +17,8 @@
    set
    weakref
    descriptor
+   property
+   classmethod
    slots
    super
 
@@ -33,5 +35,7 @@
 - :doc:`set` — 内置类型 set
 - :doc:`weakref` — 弱引用
 - :doc:`descriptor` — 属性访问与描述符
+- :doc:`property` — property 的底层实现
+- :doc:`classmethod` — classmethod / staticmethod 的底层实现
 - :doc:`slots` — __slots__ 的底层实现
 - :doc:`super` — super() 的底层实现

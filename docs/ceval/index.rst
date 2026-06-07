@@ -10,6 +10,7 @@
    specialize
    tier2
    jit
+   with-statement
 
 - :doc:`ceval-loop` — 解释循环主流程
 - :doc:`bytecodes` — 核心字节码指令分析
@@ -17,3 +18,4 @@
 - :doc:`specialize` — 指令特化
 - :doc:`tier2` — Tier 2 优化器
 - :doc:`jit` — JIT 编译器
+- :doc:`with-statement` — with 语句底层实现
