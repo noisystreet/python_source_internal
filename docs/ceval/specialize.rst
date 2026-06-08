@@ -10,8 +10,8 @@
    -- H. G. Wells
 
 
-CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——指令在运行时
-根据参数的实际类型，将自己替换为**特化版本** 。
+CPython 3.11+ 引入了 **自适应字节码指令 (Adaptive Instruction)**——指令在运行时
+根据参数的实际类型，将自己替换为 **特化版本** 。
 
 从一道题开始
 ------------
@@ -21,7 +21,7 @@ CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——
     for _ in range(1000):
         a + b      # 前几次是通用加法，之后变成整数加法特化
 
-前几次执行 ``a + b`` 时，``BINARY_OP`` 是通用版本——它会检查 ``a`` 和 ``b`` 的类型，
+前几次执行 ``a + b`` 时， ``BINARY_OP`` 是通用版本——它会检查 ``a`` 和 ``b`` 的类型，
 分发到对应的 ``nb_add`` 。但如果 ``a`` 和 ``b`` 总是整数，CPython 会将这条指令
 **原地替换** 为 ``BINARY_OP_ADD_INT``——不再检查类型，直接做整数加法。
 
@@ -40,7 +40,7 @@ CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——
 第一问：自适应指令的机制
 ------------------------
 
-每条自适应指令开头有一个**特化计数器** （存储在指令后的缓存槽中）：
+每条自适应指令开头有一个 **特化计数器** （存储在指令后的缓存槽中）：
 
 .. code-block:: c
 
@@ -68,7 +68,7 @@ CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——
         ...
     }
 
-当计数器触发时，``_Py_Specialize_BinaryOp`` 检查操作数的实际类型，然后**重写
+当计数器触发时， ``_Py_Specialize_BinaryOp`` 检查操作数的实际类型，然后**重写
 指令的第一个字**为特化后的操作码。
 
 第二问：CALL 指令的特化
@@ -117,7 +117,7 @@ CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——
      - 跳过方法展开、直接创建帧
    * - ``CALL_BUILTIN_FAST``
      - 调用内置 C 函数（如 ``len()`` ）
-     - 直接调用 ``vectorcall``，零检查
+     - 直接调用 ``vectorcall`` ，零检查
    * - ``CALL_BOUND_METHOD_EXACT_ARGS``
      - 调用绑定的方法
      - 简化 self 绑定逻辑
@@ -175,8 +175,8 @@ CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——
 第四问：反特化 (Unspecialization)
 ----------------------------------
 
-如果特化版本发现类型不匹配（例如之前一直是 ``int + int``，但突然来了个 ``str + int`` ），
-它会**反特化**——把指令恢复为通用版本：
+如果特化版本发现类型不匹配（例如之前一直是 ``int + int`` ，但突然来了个 ``str + int`` ），
+它会 **反特化**——把指令恢复为通用版本：
 
 .. code-block:: c
 
@@ -195,13 +195,13 @@ CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——
         ...
     }
 
-反特化时，CPython 不会恢复到原来的 ``BINARY_OP``，而是**再次调用** ``_Py_Specialize_*``
+反特化时，CPython 不会恢复到原来的 ``BINARY_OP`` ，而是 **再次调用** ``_Py_Specialize_*``
 重新根据当前类型选择特化版本。这样可以跟踪类型变化的模式。
 
 第五问：LOAD_ATTR 的特化
 -------------------------
 
-属性访问（``obj.attr`` ）也是特化的重要目标：
+属性访问（ ``obj.attr`` ）也是特化的重要目标：
 
 .. code-block:: c
 

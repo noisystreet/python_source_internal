@@ -11,7 +11,7 @@
 
 
 ``PyConfig`` 是 CPython 3.8+ 引入的配置结构，用于统一解释器的初始化参数。
-它取代了旧版中零散的 ``Py_SetProgramName``、``Py_SetPath`` 等 API。
+它取代了旧版中零散的 ``Py_SetProgramName`` 、 ``Py_SetPath`` 等 API。
 
 从一道题开始
 ------------
@@ -95,7 +95,7 @@
 第三问：专用配置结构
 --------------------
 
-Python 3.8 还引入了 ``PyPreConfig``，在 ``PyConfig`` 之前生效：
+Python 3.8 还引入了 ``PyPreConfig`` ，在 ``PyConfig`` 之前生效：
 
 .. code-block:: c
 
@@ -118,7 +118,7 @@ Python 3.8 还引入了 ``PyPreConfig``，在 ``PyConfig`` 之前生效：
     python -c "import sys; print(sys.flags)"
     python -X dev -c "import sys; print(sys.flags)"
 
-观察 ``dev_mode``、``isolated`` 等标志的变化。
+观察 ``dev_mode`` 、 ``isolated`` 等标志的变化。
 
 小结
 ----

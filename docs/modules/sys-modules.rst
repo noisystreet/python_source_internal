@@ -63,8 +63,8 @@ sys.modules 与模块缓存
     >>> sys.modules['math']
     <module 'math' from '/usr/lib/python3.14/math.py'>
 
-键是模块名（``str`` ），值是模块对象（``PyModuleObject`` ）。
-对于子模块如 ``os.path``，键是 ``'os.path'``，值是 ``os.path`` 模块对象本身。
+键是模块名（ ``str`` ），值是模块对象（ ``PyModuleObject`` ）。
+对于子模块如 ``os.path`` ，键是 ``'os.path'`` ，值是 ``os.path`` 模块对象本身。
 
 第三问：缓存的清理与重载
 ------------------------
@@ -88,7 +88,7 @@ sys.modules 与模块缓存
 .. warning::
 
    ``del sys.modules['modname']`` 不会释放已经被其他模块引用了的模块对象。
-   如果 ``other.py`` 中已经执行了 ``import math``，那么 ``other.math`` 仍然
+   如果 ``other.py`` 中已经执行了 ``import math`` ，那么 ``other.math`` 仍然
    指向旧的模块对象。新的 ``import math`` 会创建一个新的模块实例。
 
 通过示例脚本验证

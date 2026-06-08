@@ -23,7 +23,7 @@ ctypes 与外部函数接口
     libc.printf(b"Hello from libc!\n")  # 直接调用 C 函数
 
 Python 的数据怎么传给 C？C 的返回值怎么变成 Python 对象？这背后是 ``ctypes``
-的核心：**FFI（Foreign Function Interface）** 。
+的核心： **FFI（Foreign Function Interface）** 。
 
 第一问：ctypes 的数据类型映射
 ------------------------------

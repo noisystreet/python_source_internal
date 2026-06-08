@@ -11,7 +11,7 @@ property 的底层实现 — PyProperty_Type
 
 
 ``property`` 是 Python 内置的描述符类型，它将方法调用伪装成属性访问。
-在 C 层，``property`` 是 ``PyProperty_Type``——一个实现了描述符协议的类。
+在 C 层， ``property`` 是 ``PyProperty_Type``——一个实现了描述符协议的类。
 
 从一道题开始
 ------------
@@ -43,13 +43,13 @@ property 的底层实现 — PyProperty_Type
         int getter_descriptors; // 缓存标记
     } PyPropertyObject;
 
-``@property`` 的本质就是将 ``prop_get``、``prop_set``、``prop_del`` 三个
+``@property`` 的本质就是将 ``prop_get`` 、 ``prop_set`` 、 ``prop_del`` 三个
 函数指针打包到一个对象中。
 
 第二问：property 的描述符协议
 -------------------------------
 
-``PyProperty_Type`` 实现了 ``tp_descr_get`` 和 ``tp_descr_set``：
+``PyProperty_Type`` 实现了 ``tp_descr_get`` 和 ``tp_descr_set`` ：
 
 .. code-block:: c
 
@@ -89,7 +89,7 @@ property 的底层实现 — PyProperty_Type
     }
 
 当 ``obj.x`` 被解析时，CPython 在 ``C.__dict__`` 中找到 ``x`` 这个
-``PyPropertyObject``，发现它有 ``tp_descr_get``，于是调用 ``property_descr_get``。
+``PyPropertyObject`` ，发现它有 ``tp_descr_get`` ，于是调用 ``property_descr_get`` 。
 
 第三问：property 的装饰器语法
 ------------------------------
@@ -99,7 +99,7 @@ property 的底层实现 — PyProperty_Type
     @property
     def x(self): ...
 
-等价于 ``x = property(x)``，也就是：
+等价于 ``x = property(x)`` ，也就是：
 
 .. code-block:: c
 

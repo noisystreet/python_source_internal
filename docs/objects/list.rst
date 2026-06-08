@@ -10,7 +10,7 @@
    -- Bjarne Stroustrup
 
 
-Python 的 ``list`` 是一个**动态数组**——它像 C 的数组一样支持 O(1) 随机访问，
+Python 的 ``list`` 是一个 **动态数组**——它像 C 的数组一样支持 O(1) 随机访问，
 但又可以自动扩容。
 
 从一道题开始
@@ -51,14 +51,14 @@ list 的底层就是 **一个 C 指针数组 + 一个容量标记** 。
 
 - ``ob_size`` （来自 ``PyObject_VAR_HEAD`` ）：当前元素个数，即 ``len(lst)``
 - ``ob_item`` ：指向一个 ``PyObject*`` 数组的首地址
-- ``allocated`` ：总共分配了多少空间（``ob_size <= allocated`` ）
+- ``allocated`` ：总共分配了多少空间（ ``ob_size <= allocated`` ）
 
 当 ``ob_size == allocated`` 时，再添加元素就需要扩容。
 
 第二问：append 的扩容策略
 --------------------------
 
-``list.append`` 使用**指数扩容**策略：
+``list.append`` 使用 **指数扩容** 策略：
 
 .. code-block:: c
 
@@ -106,7 +106,7 @@ list 的底层就是 **一个 C 指针数组 + 一个容量标记** 。
     x = lst.pop(0)     # 所有元素前移 O(n)
     lst.pop()          # 最后一个元素，O(1)
 
-在 C 层，``list.insert(0, x)`` 就是：
+在 C 层， ``list.insert(0, x)`` 就是：
 
 .. code-block:: c
 

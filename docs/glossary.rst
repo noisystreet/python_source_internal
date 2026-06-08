@@ -12,11 +12,11 @@
      可变长对象的基类，在 ``PyObject`` 基础上增加 ``ob_size`` 字段。
 
    PyTypeObject
-     类型对象的 C 结构体。定义了 ``tp_name``、``tp_dealloc``、``tp_call`` 等
+     类型对象的 C 结构体。定义了 ``tp_name`` 、 ``tp_dealloc`` 、 ``tp_call`` 等
      函数指针，是 CPython 实现"一切皆对象"和动态类型分发的核心。
 
    引用计数 (reference counting)
-     CPython 的内存管理基础。每个对象维护 ``ob_refcnt``，当为 0 时立即回收。
+     CPython 的内存管理基础。每个对象维护 ``ob_refcnt`` ，当为 0 时立即回收。
 
    GIL (Global Interpreter Lock)
      全局解释器锁，保证同一时间只有一个线程执行 Python 字节码。
@@ -72,7 +72,7 @@
 
    描述符协议 (descriptor protocol)
      ``__get__`` / ``__set__`` / ``__delete__`` 方法约束。
-     ``property``、``classmethod``、``staticmethod`` 都是描述符。
+     ``property`` 、 ``classmethod`` 、 ``staticmethod`` 都是描述符。
 
    MRO (Method Resolution Order)
      方法解析顺序（C3 线性化），决定 ``super()`` 和属性查找的顺序。
@@ -87,7 +87,7 @@
      Python 3.8+ 的统一解释器初始化配置结构。
 
    ceval
-     核心评估循环（``Python/ceval.c``），执行字节码的主循环。
+     核心评估循环（ ``Python/ceval.c`` ），执行字节码的主循环。
 
    Vectorcall
      PEP 590 定义的快速调用约定（C API 层）。

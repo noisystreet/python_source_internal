@@ -10,7 +10,7 @@
    -- Brian Kernighan
 
 
-Python 的调试器（``pdb``）基于 ``sys.settrace`` 实现。这一节深入
+Python 的调试器（ ``pdb`` ）基于 ``sys.settrace`` 实现。这一节深入
 调试器的底层工作方式——断点管理、检查点触发、交互循环。
 
 从一道题开始
@@ -20,7 +20,7 @@ Python 的调试器（``pdb``）基于 ``sys.settrace`` 实现。这一节深入
 
     import pdb; pdb.set_trace()
 
-这行代码启动了一个**交互式调试会话**。底层发生了什么？
+这行代码启动了一个 **交互式调试会话** 。底层发生了什么？
 
 第一问：pdb 的工作流程
 ----------------------
@@ -61,7 +61,7 @@ Python 的调试器（``pdb``）基于 ``sys.settrace`` 实现。这一节深入
 第二问：断点的 C 层存储
 ------------------------
 
-在 C 层，``sys.settrace`` 设置的是 ``PyThreadState.c_tracefunc``：
+在 C 层， ``sys.settrace`` 设置的是 ``PyThreadState.c_tracefunc`` ：
 
 .. code-block:: c
 

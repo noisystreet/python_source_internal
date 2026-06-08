@@ -11,7 +11,7 @@ classmethod / staticmethod 的底层实现
 
 
 ``classmethod`` 和 ``staticmethod`` 是 Python 内置的描述符类型，
-它们修改方法调用时的**第一个参数**传递方式。
+它们修改方法调用时的 **第一个参数** 传递方式。
 
 从一道题开始
 ------------
@@ -42,7 +42,7 @@ classmethod / staticmethod 的底层实现
         PyObject *cm_dict;      // 额外属性字典
     } PyCMethodObject;
 
-当 ``C.f()`` 被调用时，CPython 在 ``C.__dict__`` 中找到 ``PyCMethodObject``：
+当 ``C.f()`` 被调用时，CPython 在 ``C.__dict__`` 中找到 ``PyCMethodObject`` ：
 
 .. code-block:: c
 
@@ -60,7 +60,7 @@ classmethod / staticmethod 的底层实现
     }
 
 关键区别：
-- ``classmethod`` 忽略 ``obj``（实例），传递 ``type``（类）作为第一参数
+- ``classmethod`` 忽略 ``obj`` （实例），传递 ``type`` （类）作为第一参数
 - 即使通过 ``obj.f()`` 调用，传的也是 ``type(obj)`` 而非 ``obj``
 
 第二问：staticmethod 的结构与调用
@@ -74,7 +74,7 @@ classmethod / staticmethod 的底层实现
         PyObject *sm_callable;  // 被包装的函数
     } PyStaticMethodObject;
 
-``staticmethod`` 的描述符获取实现极其简单——**直接返回原始函数**：
+``staticmethod`` 的描述符获取实现极其简单——** 直接返回原始函数** ：
 
 .. code-block:: c
 
@@ -87,7 +87,7 @@ classmethod / staticmethod 的底层实现
     }
 
 这意味着 ``C.g`` 返回的就是 ``g`` 函数本身，和写在外面没有区别。
-为什么还要用 ``@staticmethod``？它告诉读者这个方法是与类相关的辅助函数，
+为什么还要用 ``@staticmethod`` ？它告诉读者这个方法是与类相关的辅助函数，
 即使子类重写也不受影响。
 
 第三问：classmethod 与普通方法的对比

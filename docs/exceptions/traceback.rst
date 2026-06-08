@@ -10,7 +10,7 @@ Traceback 与栈展开 — 错误信息的构建
    -- Chinese Proverb (on tracebacks as memory)
 
 
-当异常没有被捕获时，Python 会打印 Traceback——它显示异常发生时的**完整调用栈** 。
+当异常没有被捕获时，Python 会打印 Traceback——它显示异常发生时的 **完整调用栈** 。
 
 从一道题开始
 ------------
@@ -27,7 +27,7 @@ Traceback 与栈展开 — 错误信息的构建
     ZeroDivisionError: division by zero
 
 Traceback 展示了从异常发生点到最外层调用的完整路径。这里 ``inner``
-在行 5 调用，``outer`` 在行 3 调用，``1/0`` 在行 1。
+在行 5 调用， ``outer`` 在行 3 调用， ``1/0`` 在行 1。
 
 第一问：Traceback 对象的构建
 ----------------------------

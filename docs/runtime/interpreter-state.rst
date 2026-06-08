@@ -21,7 +21,7 @@
     import sys
     sys.modules  # 这个 dict 存在哪里？ → PyInterpreterState.modules
 
-每个解释器有自己独立的 ``sys.modules``。子解释器之间互不干扰。
+每个解释器有自己独立的 ``sys.modules`` 。子解释器之间互不干扰。
 
 第一问：结构
 ------------

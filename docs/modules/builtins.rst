@@ -10,8 +10,8 @@
    -- Aristotle, Nicomachean Ethics (on built-in fundamentals)
 
 
-CPython 有一些模块是**编译进解释器**的，不需要从文件加载。
-除此之外，还有**冻结模块**（frozen modules）和基于文件的加载。
+CPython 有一些模块是 **编译进解释器** 的，不需要从文件加载。
+除此之外，还有 **冻结模块** （frozen modules）和基于文件的加载。
 这一节梳理整个导入管道（import pipeline）。
 
 从一道题开始
@@ -107,7 +107,7 @@ BuiltinImporter 的 ``find_spec`` 实现很简单——查表：
 第三问：FrozenImporter — 冻结模块
 ----------------------------------
 
-冻结模块是**编译成 C 数组的字节码**，直接链接进解释器。
+冻结模块是 **编译成 C 数组的字节码** ，直接链接进解释器。
 ``importlib._bootstrap`` 和 ``importlib._bootstrap_external`` 就是
 冻结模块——它们在解释器启动前就已经被编译为字节码并嵌入到可执行文件中。
 

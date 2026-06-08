@@ -101,7 +101,7 @@ Python 定义了以下几种追踪事件：
     }
 
 ``sys.settrace`` 设置 ``tstate->c_tracefunc`` 。当这个字段非空时，
-解释器在每次 ``call`` 、``return`` 、``line`` 、``exception`` 事件发生时
+解释器在每次 ``call`` 、 ``return`` 、 ``line`` 、 ``exception`` 事件发生时
 调用这个函数。
 
 第三问：setprofile 与 settrace 的区别

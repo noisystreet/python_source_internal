@@ -40,7 +40,7 @@ Python 的 ``import`` 语句触发了一整套查找、加载、缓存机制。
     4 IMPORT_NAME 0 (math)      # → 调用 __import__
     6 STORE_NAME  0 (math)
 
-``IMPORT_NAME`` 调用内置函数 ``__import__``，它在 C 层对应
+``IMPORT_NAME`` 调用内置函数 ``__import__`` ，它在 C 层对应
 ``PyImport_ImportModuleLevelObject`` 。
 
 第二问：查找和加载

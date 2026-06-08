@@ -10,7 +10,7 @@
    -- Friedrich Engels
 
 
-CPython 3.14 引入了实验性的自由线程构建（``--disable-gil`` ）。
+CPython 3.14 引入了实验性的自由线程构建（ ``--disable-gil`` ）。
 
 从一道题开始
 ------------
@@ -27,7 +27,7 @@ CPython 3.14 引入了实验性的自由线程构建（``--disable-gil`` ）。
 第一问：平衡引用计数 (BRC)
 ---------------------------
 
-无 GIL 下最大的挑战是**引用计数** 。CPython 引入了**平衡引用计数 (BRC)** ：
+无 GIL 下最大的挑战是 **引用计数** 。CPython 引入了 **平衡引用计数 (BRC)** ：
 
 .. code-block:: c
 
@@ -52,7 +52,7 @@ CPython 3.14 引入了实验性的自由线程构建（``--disable-gil`` ）。
         PyTypeObject *ob_type;
     } PyObject;
 
-释放时，如果 ``ob_refcnt_local + ob_refcnt_shared == 0``，对象才被真正释放。
+释放时，如果 ``ob_refcnt_local + ob_refcnt_shared == 0`` ，对象才被真正释放。
 
 第二问：自由线程的影响
 -----------------------

@@ -26,7 +26,7 @@
     t = threading.Thread(target=f)
     t.start()
 
-每个 Python 线程都有自己的 ``PyThreadState``，互不共享。
+每个 Python 线程都有自己的 ``PyThreadState`` ，互不共享。
 
 第一问：结构
 ------------

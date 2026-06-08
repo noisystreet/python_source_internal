@@ -123,14 +123,14 @@ CPython 使用 ``mmap`` 分配 Arena（如果平台支持），而不是 ``mallo
 
 使用 ``mmap`` 的优势：
 
-- 可以**单独释放**回系统（``malloc`` 的大块内存可能被 C 库缓存）
+- 可以 **单独释放** 回系统（ ``malloc`` 的大块内存可能被 C 库缓存）
 - 减少堆碎片（因为 mmap 区域独立于堆）
 - 地址空间随机化 (ASLR)
 
 第四问：Arena 的释放条件
 ------------------------
 
-Arena 在**所有 Pool 都空闲**时才会被释放。一个 Pool 变空的时机：
+Arena 在 **所有 Pool 都空闲** 时才会被释放。一个 Pool 变空的时机：
 
 - 释放 Pool 中最后一个 block 时，Pool 变空
 - 空 Pool 被放回 Arena 的 ``freepools`` 链表

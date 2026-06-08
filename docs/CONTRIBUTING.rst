@@ -15,7 +15,7 @@
 
 1. Fork 本仓库并克隆到本地
 2. 阅读 `AGENTS.md <../AGENTS.md>`_ 了解编码约定
-3. 创建分支：``git checkout -b topic/your-topic``
+3. 创建分支： ``git checkout -b topic/your-topic``
 4. 按 :ref:`编码约定 <coding-conventions>` 编写内容
 5. 确保 ``make lint test`` 通过
 6. 提交 PR
@@ -24,7 +24,7 @@
 --------
 
 * 使用中文撰写，关键术语首次出现时标注英文原文（如「对象 (``PyObject``)」）
-* 代码块需标注语言（如 ``.. code-block:: python`` 、``.. code-block:: c`` ）
+* 代码块需标注语言（如 ``.. code-block:: python`` 、 ``.. code-block:: c`` ）
 * 内部链接使用相对路径
 * 新增文档需同步更新 :doc:`ARCHITECTURE` 索引
 

@@ -10,8 +10,8 @@
    -- Lao Tzu, Tao Te Ching
 
 
-上一节我们看到了 ``CALL`` 指令。这一节深入函数调用的核心——**Vectorcall 协议**，
-以及**栈帧的创建与切换** 。
+上一节我们看到了 ``CALL`` 指令。这一节深入函数调用的核心——**Vectorcall 协议** ，
+以及 **栈帧的创建与切换** 。
 
 从一道题开始
 ------------
@@ -138,7 +138,7 @@ Vectorcall 的参数传递方式：
 #. 在堆上分配 ``_PyInterpreterFrame`` （或从自由列表复用）
 #. 设置 ``frame->previous = tstate->current_frame`` （形成帧链）
 #. 将参数从调用者的栈拷贝到新帧的 ``localsplus[]``
-#. 设置 ``instr_ptr`` 指向函数的第一条指令（``RESUME`` ）
+#. 设置 ``instr_ptr`` 指向函数的第一条指令（ ``RESUME`` ）
 #. 设置 ``tstate->current_frame = frame`` （切换到新帧）
 
 .. mermaid::
@@ -213,7 +213,7 @@ Vectorcall 的参数传递方式：
     // 普通函数直接执行
     return _PyEval_EvalFrame(tstate, frame, 0);
 
-生成器调用**不执行函数体**——它只是创建帧并冻结在 ``FRAME_CREATED`` 状态，
+生成器调用 **不执行函数体**——它只是创建帧并冻结在 ``FRAME_CREATED`` 状态，
 然后返回 ``PyGenObject`` 。帧的执行延迟到 ``next(gen)`` 被调用时。
 
 通过示例脚本验证

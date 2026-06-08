@@ -10,8 +10,8 @@ super() 的底层实现 — MRO 与方法解析
    -- Jacques Hadamard
 
 
-``super()`` 是 Python 中处理**协作多继承** （cooperative multiple inheritance）的关键机制。
-在 C 层，``super()`` 返回一个 ``super`` 对象，它根据 MRO（方法解析顺序）委托方法调用。
+``super()`` 是 Python 中处理 **协作多继承** （cooperative multiple inheritance）的关键机制。
+在 C 层， ``super()`` 返回一个 ``super`` 对象，它根据 MRO（方法解析顺序）委托方法调用。
 
 从一道题开始
 ------------
@@ -44,8 +44,8 @@ super() 的底层实现 — MRO 与方法解析
 ``super()`` 的核心就是三个指针：
 
 - ``type`` ：你在哪个类中调用了 ``super()`` （即包含 ``super()`` 的类）
-- ``obj`` ：当前实例（``self`` ）
-- ``obj_type`` ：实例的实际类型（``type(self)`` ）
+- ``obj`` ：当前实例（ ``self`` ）
+- ``obj_type`` ：实例的实际类型（ ``type(self)`` ）
 
 第二问：属性查找过程
 -----------------------
@@ -93,7 +93,7 @@ C 层实现：
 第三问：为什么 super() 不需要传参（3.14+）
 ------------------------------------------
 
-在 CPython 3.14 中，``super()`` 在无参数时会自动推断类和方法：
+在 CPython 3.14 中， ``super()`` 在无参数时会自动推断类和方法：
 
 .. code-block:: c
 
@@ -102,7 +102,7 @@ C 层实现：
     __class__ = ...  // 编译器自动创建 __class__
     super(__class__, self)
 
-字节码层面，``super()`` 被展开为对 ``__class__`` cell 变量和 ``self`` 的引用。
+字节码层面， ``super()`` 被展开为对 ``__class__`` cell 变量和 ``self`` 的引用。
 
 通过示例脚本验证
 ----------------

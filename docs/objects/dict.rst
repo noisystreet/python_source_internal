@@ -23,7 +23,7 @@ Python 的 ``dict`` 是语言的核心——它是对象的属性字典、全局
 
 当你写 ``d["age"]`` 时，CPython 如何在 O(1) 时间内找到 ``30`` ？
 
-答案是**哈希表**——Python 的 ``dict`` 本质上就是一张哈希表。但 CPython 的哈希表经过高度优化，
+答案是 **哈希表**——Python 的 ``dict`` 本质上就是一张哈希表。但 CPython 的哈希表经过高度优化，
 不是教科书中简单的"数组 + 链表"实现。
 
 .. mermaid::
@@ -49,10 +49,10 @@ Python 的 ``dict`` 是语言的核心——它是对象的属性字典、全局
 
 字典有两种内部布局：
 
-**组合表 (Combined Table)** ：``ma_values == NULL``，键值对都存储在 ``ma_keys`` 中
-**分离表 (Split Table)** ：``ma_values != NULL``，键存储在 ``ma_keys``，值存在 ``ma_values`` 中
+**组合表 (Combined Table)** ： ``ma_values == NULL`` ，键值对都存储在 ``ma_keys`` 中
+**分离表 (Split Table)** ： ``ma_values != NULL`` ，键存储在 ``ma_keys`` ，值存在 ``ma_values`` 中
 
-分离表主要用于**对象属性字典** （``object.__dict__`` ）——同一个类的所有实例共享同一份键表，
+分离表主要用于 **对象属性字典** （ ``object.__dict__`` ）——同一个类的所有实例共享同一份键表，
 每个实例只存储自己的值数组，大幅节省内存。
 
 第二问：键表的内部布局
@@ -96,8 +96,8 @@ Python 的 ``dict`` 是语言的核心——它是对象的属性字典、全局
 
 #. 计算 ``hash(key)``
 #. ``index = hash & (size - 1)`` （取模）
-#. 读 ``dk_indices[index]``，得到 entry 索引
-#. 如果是 ``-1`` （``DKIX_EMPTY`` ），键不存在
+#. 读 ``dk_indices[index]`` ，得到 entry 索引
+#. 如果是 ``-1`` （ ``DKIX_EMPTY`` ），键不存在
 #. 比较 ``dk_entries[entry].key`` 是否等于目标键
 
 索引数组的每个元素大小根据哈希表大小自动选择：小表用 1 字节，大表用 2/4/8 字节。
@@ -105,7 +105,7 @@ Python 的 ``dict`` 是语言的核心——它是对象的属性字典、全局
 第三问：哈希冲突怎么解决？
 --------------------------
 
-CPython 使用**线性探测 (Linear Probing)** ：
+CPython 使用 **线性探测 (Linear Probing)** ：
 
 .. code-block:: c
 
@@ -127,15 +127,15 @@ CPython 使用**线性探测 (Linear Probing)** ：
         return i;
     }
 
-当两个不同的 key 映射到同一个索引时，CPython 简单地**往前走一格** 。如果那一格也被占了，
+当两个不同的 key 映射到同一个索引时，CPython 简单地 **往前走一格** 。如果那一格也被占了，
 继续往前走，直到找到空位或找到目标键。
 
 .. note::
 
-   线性探测的平均查找长度取决于**负载因子 (Load Factor)** 。CPython 的字典负载因子约为 **2/3**
-   （``USABLE_FRACTION`` ），即在哈希表满 2/3 之前不会扩容。这保证了 O(1) 的平均查找复杂度。
+   线性探测的平均查找长度取决于 **负载因子 (Load Factor)** 。CPython 的字典负载因子约为 **2/3**
+   （ ``USABLE_FRACTION`` ），即在哈希表满 2/3 之前不会扩容。这保证了 O(1) 的平均查找复杂度。
 
-当字典大小超过负载因子限制时，CPython 会**扩容** ：
+当字典大小超过负载因子限制时，CPython 会 **扩容** ：
 
 - 新大小为原大小的 2 倍
 - 重新计算所有哈希值在新表中的位置
@@ -176,7 +176,7 @@ CPython 使用**线性探测 (Linear Probing)** ：
 ``PyDictKeysObject`` 中的 ``dk_version`` 是一个递增的计数器。每次对字典的修改
 都会重置它为 0（或递增）。
 
-这个版本号被 **Tier 2 优化器** 和 **字典观察者 (watchers)** 使用：
+这个版本号被 **Tier 2 优化器 ** 和 **字典观察者 (watchers)** 使用：
 
 .. code-block:: c
 
@@ -195,7 +195,7 @@ CPython 使用**线性探测 (Linear Probing)** ：
 第六问：为什么 Python 3.7+ 的 dict 保持插入顺序？
 --------------------------------------------------
 
-自 Python 3.7 起，``dict`` 保证**插入顺序** 。这个特性源于 PEP 468。
+自 Python 3.7 起， ``dict`` 保证 **插入顺序** 。这个特性源于 PEP 468。
 
 在 C 层，虽然 ``dk_entries`` 是哈希表，但迭代器按 **``dk_entries`` 数组的插入顺序** 遍历，
 而不是按哈希索引顺序。因为 ``dk_nentries`` 是递增的，新条目总是追加到 ``dk_entries`` 末尾。

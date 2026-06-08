@@ -11,7 +11,7 @@
 
 
 CPython 提供了一套 C 级别的临界区宏，用于保护共享数据的访问。
-这部分机制在自由线程（``--disable-gil`` ）构建中至关重要。
+这部分机制在自由线程（ ``--disable-gil`` ）构建中至关重要。
 
 从一道题开始
 ------------
@@ -120,7 +120,7 @@ CPython 3.14 内部使用多种锁机制：
      - 示例
      - 为什么需要
    * - 修改容器对象
-     - ``PyList_SetItem`` 、``PyDict_SetItem``
+     - ``PyList_SetItem`` 、 ``PyDict_SetItem``
      - 容器内部结构可能被其他线程破坏
    * - 修改对象属性
      - ``PyObject_SetAttr``
