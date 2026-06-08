@@ -1,3 +1,5 @@
+.. _compiler-ast:
+
 抽象语法树 (AST) — 语法结构的中间表示
 =============================================
 
@@ -119,4 +121,6 @@ AST 的结构由 :file:`Parser/Python.asdl` 描述：
 参考资料
 --------
 
+- :ref:`compiler-parser` — 解析器输出 AST
+- :ref:`compiler-compiler` — 编译器将 AST 转为字节码
 - :file:`Python/Python-ast.c` — AST 节点分配

@@ -1,3 +1,5 @@
+.. _compiler-deferred-annotations:
+
 PEP 649 — 延迟注解评估
 ================================
 
@@ -146,3 +148,13 @@ PEP 649 在 ``dataclasses``、``pydantic`` 等依赖运行时类型分析的
      - 不需要，向后兼容。但可以移除 ``from __future__ import annotations``
    * - 最大受益者？
      - 数据类、pydantic、FastAPI 等运行时依赖注解的库
+
+参考资料
+--------
+
+- :pep:`649` — Deferred Evaluation Of Annotations Using Descriptors
+- :pep:`563` — Postponed Evaluation of Annotations
+- :file:`Objects/descrobject.c` — annotation 描述符实现
+- :file:`Python/compile.c` — co_annotation_events 生成
+- :file:`Python/ceval.c` — 延迟字节码的执行
+- `PEP 649 解释器邮件列表讨论 <https://discuss.python.org/t/pep-649-deferred-evaluation-of-annotations/>`__

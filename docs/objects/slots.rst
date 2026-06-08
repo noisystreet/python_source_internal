@@ -1,3 +1,5 @@
+.. _objects-slots:
+
 __slots__ 的底层实现
 ============================
 
@@ -157,4 +159,6 @@ CPython 在创建类时，根据 ``__slots__`` 调整类型的 ``tp_basicsize`` 
 参考资料
 --------
 
+- :ref:`objects-typeobject` — 类型对象与 tp_members 分配
+- :ref:`objects-descriptor` — 属性访问与 __slots__ 描述符
 - :file:`Objects/typeobject.c` — tp_members 分配

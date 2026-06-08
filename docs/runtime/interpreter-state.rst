@@ -1,3 +1,5 @@
+.. _runtime-interpreter-state:
+
 解释器状态 (PyInterpreterState)
 ============================================
 
@@ -126,4 +128,6 @@
 参考资料
 --------
 
+- :ref:`runtime-lifecycle` — 解释器在生命周期中的位置
+- :ref:`runtime-thread-state` — 线程状态与解释器状态的关联
 - :file:`Python/pystate.c` — 解释器状态管理

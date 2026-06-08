@@ -1,3 +1,5 @@
+.. _ceval-calls:
+
 调用约定与栈帧 — PyObject_Vectorcall 协议
 ===============================================
 
@@ -257,5 +259,7 @@ Vectorcall 的参数传递方式：
 参考资料
 --------
 
+- :ref:`ceval-loop` — 解释循环与帧管理
+- :ref:`objects-func-code` — 函数对象与代码对象
 - :file:`Python/ceval.c` — 调用实现
 - :pep:`590` — Vectorcall

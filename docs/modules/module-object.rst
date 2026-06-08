@@ -1,3 +1,5 @@
+.. _modules-object:
+
 模块对象与命名空间 — PyModuleObject
 ============================================
 
@@ -172,4 +174,6 @@ C 扩展模块通过 ``PyModule_Create`` 从 ``PyModuleDef`` 构造模块：
 参考资料
 --------
 
+- :ref:`compiler-import` — 导入系统如何创建模块对象
+- :ref:`modules-builtins` — 内置模块与 PyModuleDef
 - :file:`Objects/moduleobject.c` — PyModuleObject

@@ -1,3 +1,5 @@
+.. _compiler-tokenizer:
+
 Tokenizer — 词法分析器
 =============================
 
@@ -255,6 +257,8 @@ Tokenizer 在遇到 ``f"`` 时推入 ``TOK_FSTRING_MODE`` ：
 参考资料
 --------
 
+- :ref:`compiler-parser` — 解析器消费 Token 流
+- :ref:`compiler-ast` — AST 的结构与节点类型
 - :pep:`701` — f-string 标记化
 - :file:`Parser/lexer/` — tokenizer 实现目录
 - :file:`Parser/lexer/state.h` — ``tok_state`` 结构定义

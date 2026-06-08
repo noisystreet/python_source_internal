@@ -1,3 +1,5 @@
+.. _extensions-memory-api:
+
 内存与对象管理 API — PyMem / PyObject
 ============================================
 
@@ -142,4 +144,5 @@ CPython 的内存分配器有三层：
 参考资料
 --------
 
+- :ref:`gc-obmalloc` — pymalloc 分配器详解与 C API
 - :file:`Objects/obmalloc.c` — 内存分配器

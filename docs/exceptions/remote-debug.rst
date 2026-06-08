@@ -1,3 +1,5 @@
+.. _exceptions-remote-debug:
+
 调试支持 — pdb 与底层调试协议
 ====================================
 
@@ -142,5 +144,7 @@ Python 的调试器（``pdb``）基于 ``sys.settrace`` 实现。这一节深入
 参考资料
 --------
 
+- :ref:`exceptions-tracing` — sys.settrace 与调试事件
+- :ref:`exceptions-handling` — 异常捕获机制
 - :file:`Lib/bdb.py` — pdb 底层
 - :file:`Lib/pdb.py` — pdb 交互

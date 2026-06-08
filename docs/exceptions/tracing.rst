@@ -1,3 +1,5 @@
+.. _exceptions-tracing:
+
 sys.settrace / sys.setprofile — 追踪与性能分析
 ====================================================
 
@@ -154,4 +156,6 @@ Python 定义了以下几种追踪事件：
 参考资料
 --------
 
+- :ref:`ceval-loop` — 解释循环中的追踪检查（DISPATCH 中的 trace）
+- :ref:`exceptions-handling` — 追踪事件中的异常回调
 - :file:`Python/ceval.c` — 追踪检查

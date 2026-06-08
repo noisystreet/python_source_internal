@@ -1,3 +1,5 @@
+.. _extensions-dynamic-loading:
+
 动态加载机制 — .so / .pyd 的加载
 ==========================================
 
@@ -121,4 +123,6 @@ Windows 的关键与 Linux 不同：
 参考资料
 --------
 
+- :ref:`compiler-import` — 导入系统的完整流程
+- :ref:`modules-object` — 模块对象的创建与初始化
 - :file:`Python/importdl.c` — 动态加载实现

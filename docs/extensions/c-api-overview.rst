@@ -1,3 +1,5 @@
+.. _extensions-c-api:
+
 C API 概览 — 扩展 Python 的接口
 ======================================
 
@@ -160,4 +162,6 @@ C API 在 Python 层面不可见。运行 :file:`examples/module_demo.py` 可以
 参考资料
 --------
 
+- :ref:`extensions-module-init` — 模块初始化与 PyModuleDef
+- :ref:`extensions-limited-api` — Limited API 与跨版本兼容
 - :file:`Include/` — C API 头文件

@@ -1,3 +1,5 @@
+.. _modules-sys:
+
 sys.modules 与模块缓存
 =============================
 
@@ -114,4 +116,6 @@ sys.modules 与模块缓存
 参考资料
 --------
 
+- :ref:`compiler-import` — 导入系统与 sys.modules 的交互
+- :ref:`modules-object` — 模块对象创建
 - :file:`Python/import.c` — 模块缓存管理

@@ -1,3 +1,5 @@
+.. _compiler-import:
+
 导入机制 — import 语句的实现
 ===================================
 
@@ -111,5 +113,8 @@ CPython 的导入系统分为两步：
 参考资料
 --------
 
+- :ref:`modules-object` — 模块对象的 C 层结构
+- :ref:`modules-sys` — ``sys.modules`` 的维护
+- :ref:`modules-builtins` — 内置模块与 BuiltinImporter
 - :file:`Python/import.c` — 导入实现
 - :pep:`451` — ModuleSpec

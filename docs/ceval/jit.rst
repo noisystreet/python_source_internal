@@ -1,3 +1,5 @@
+.. _ceval-jit:
+
 JIT 编译器 — 从微码到机器码
 ==================================
 
@@ -178,6 +180,8 @@ JIT 编译的触发条件：
 参考资料
 --------
 
+- :ref:`ceval-tier2` — Tier 2 微码是 JIT 的输入
+- :ref:`ceval-specialize` — 特化是 JIT 的前提
 - :file:`Python/jit.c` — Copy-and-Patch JIT 编译器
 - :file:`Python/jit_allocator.c` — 机器码内存分配
 - `GH-113464 <https://github.com/python/cpython/issues/113464>`__ — JIT 编译器设计

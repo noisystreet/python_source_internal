@@ -1,3 +1,5 @@
+.. _objects-weakref:
+
 弱引用 —— 引用它但不留住它
 ===============================
 
@@ -311,4 +313,6 @@ CPython 保证回调在安全的时间点被调用。
 参考资料
 --------
 
+- :ref:`objects-refcount` — 引用计数与弱引用的交互
+- :ref:`gc-gc` — GC 在弱引用清空中的角色
 - :file:`Objects/weakrefobject.c` — 弱引用实现

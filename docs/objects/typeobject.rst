@@ -1,3 +1,5 @@
+.. _objects-typeobject:
+
 PyTypeObject —— "类型"本身也是一个对象
 =========================================
 
@@ -424,6 +426,8 @@ CPython 里有两种"类型"：
 
 - :pep:`252` — 类型系统与描述符协议
 - :pep:`573` — 模块级状态的 C 访问
+- :ref:`objects-descriptor` — 属性访问与描述符协议
+- :ref:`objects-slots` — ``__slots__`` 与紧凑存储
 - :file:`Include/object.h` — ``PyTypeObject`` 结构定义
 - :file:`Objects/typeobject.c` — 类型创建与 MRO 计算
 

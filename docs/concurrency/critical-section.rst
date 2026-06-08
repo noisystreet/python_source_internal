@@ -1,3 +1,5 @@
+.. _concurrency-critical-section:
+
 临界区与锁 — 线程安全的基础
 ====================================
 
@@ -158,5 +160,7 @@ CPython 3.14 内部使用多种锁机制：
 参考资料
 --------
 
+- :ref:`concurrency-free-threading` — 临界区在自由线程中的应用
+- :ref:`concurrency-gil` — 有 GIL 时无需临界区的对比
 - :file:`Python/ceval.c` — 临界区宏
 - :pep:`703` — 自由线程

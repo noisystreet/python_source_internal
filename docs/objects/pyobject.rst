@@ -1,3 +1,5 @@
+.. _objects-pyobject:
+
 PyObject 结构
 =============
 
@@ -57,6 +59,9 @@ PyObject 结构
         Py_ssize_t ob_refcnt;   /* 有多少个引用指向我？*/
         PyTypeObject *ob_type;  /* 我是什么类型？*/
     };
+
+``ob_refcnt`` 的详细机制见 :ref:`objects-refcount`，而 ``ob_type`` 指向的
+:ref:`类型对象 <objects-typeobject>` 决定了这个对象"能做什么"。
 
 .. mermaid::
 
@@ -327,6 +332,11 @@ CPython 的"继承"——用 C 实现的单继承
 **直接强转** 。因为 ``PyLongObject`` 的第一个字段就是 ``ob_base`` （即 ``PyObject`` ），
 所以 ``(PyObject*)long_obj`` 就是合法的。这就是 C 语言里手动实现的"单继承"——所有具体的对象类型，
 第一个字段必须是 ``PyObject_HEAD`` （展开后就是 ``PyObject ob_base`` ）。
+
+----
+
+参见 :ref:`objects-refcount` （引用计数的实现细节）,
+:ref:`objects-typeobject` （类型对象的内部结构）
 
 .. mermaid::
 

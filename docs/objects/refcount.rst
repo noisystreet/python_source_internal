@@ -1,3 +1,5 @@
+.. _objects-refcount:
+
 引用计数 —— 谁在用我？
 ========================
 
@@ -250,7 +252,7 @@ CPython 3.14 的解决方案是 **平衡引用计数（BRC, Biased Reference Cou
     del b       # b 的 refcount = 1 (a.next 还指着)
     # 两个对象都泄漏了！
 
-这就是 GC（垃圾回收器）存在的理由——它专门处理这种循环引用。
+这就是 :ref:`分代 GC <gc-gc>` 存在的理由——它专门处理这种循环引用。
 
 **2. 延迟销毁的危险**
 
@@ -323,6 +325,8 @@ CPython 3.14 的解决方案是 **平衡引用计数（BRC, Biased Reference Cou
 
 - :pep:`683` — 永生对象
 - :pep:`703` — 自由线程与平衡引用计数（BRC）
+- :ref:`gc-gc` — 分代回收：引用计数无法处理的循环引用
+- :ref:`concurrency-free-threading` — BRC 在自由线程中的完整实现
 - :file:`Include/refcount.h` — ``Py_INCREF`` / ``Py_DECREF`` 实现
 - :file:`Include/object.h` — ``ob_refcnt`` 与 ``ob_refcnt_shared`` 字段
 

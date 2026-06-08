@@ -1,3 +1,5 @@
+.. _extensions-limited-api:
+
 Limited API 与 Stable ABI
 ================================
 
@@ -130,5 +132,7 @@ Limited API 在扩展编译时生效。在 Python 层面，可以通过 ``sys.ab
 参考资料
 --------
 
+- :ref:`extensions-c-api` — C API 总体概览
+- :ref:`extensions-memory-api` — 内存分配器的 ABI 稳定接口
 - :pep:`384` — Stable ABI
 - :file:`Include/` — Limited API 声明

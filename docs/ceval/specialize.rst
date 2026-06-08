@@ -1,3 +1,5 @@
+.. _ceval-specialize:
+
 指令特化 (Specialization) — 自适应优化
 =============================================
 
@@ -268,6 +270,8 @@ CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——
 参考资料
 --------
 
+- :ref:`ceval-loop` — 特化发生的时机与 DISPATCH 检查
+- :ref:`ceval-tier2` — 特化后的字节码进入 Tier 2 优化
 - :pep:`659` — 自适应特化
 - :file:`Python/ceval.c` — 特化缓存的维护与失效
 - :file:`Python/specialize.c` — 特化逻辑实现

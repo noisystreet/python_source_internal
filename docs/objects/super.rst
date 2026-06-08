@@ -1,3 +1,5 @@
+.. _objects-super:
+
 super() 的底层实现 — MRO 与方法解析
 ============================================
 
@@ -133,5 +135,7 @@ C 层实现：
 参考资料
 --------
 
+- :ref:`objects-typeobject` — 类型对象与 MRO
+- :ref:`objects-descriptor` — 属性查找链中的描述符
 - :file:`Objects/typeobject.c` — super 实现
 - :pep:`3135` — New Super

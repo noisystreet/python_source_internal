@@ -1,3 +1,5 @@
+.. _concurrency-free-threading:
+
 自由线程 (Free-Threading) — 无 GIL 的 CPython
 =====================================================
 
@@ -94,6 +96,9 @@ C 扩展需要修改：
 参考资料
 --------
 
+- :ref:`concurrency-gil` — GIL 的实现细节（有 GIL 模式的基础）
+- :ref:`concurrency-critical-section` — 临界区保护机制
+- :ref:`objects-refcount` — BRC 平衡引用计数的前置知识
 - :pep:`703` — 自由线程 CPython
 - :file:`Python/ceval_gil.c` — ``--disable-gil`` 构建的 GIL 省略
 - :file:`Include/internal/pycore_atomic.h` — 原子操作 API

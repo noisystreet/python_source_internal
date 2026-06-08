@@ -1,3 +1,5 @@
+.. _gc-arena:
+
 内存池与 Arena — 大块内存的管理
 ========================================
 
@@ -224,4 +226,6 @@ CPython 使用 **Radix Tree（基数树）** 来做地址到 arena 的映射：
 参考资料
 --------
 
+- :ref:`gc-obmalloc` — pymalloc 分配器与 arena 的关系
+- :ref:`gc-gc` — GC 与 arena 回收的交互
 - :file:`Objects/obmalloc.c` — arena 管理

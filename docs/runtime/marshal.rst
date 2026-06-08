@@ -1,3 +1,5 @@
+.. _runtime-marshal:
+
 编组与序列化 (marshal)
 ==============================
 
@@ -156,4 +158,6 @@ marshal 对每种类型使用一个字节的类型码：
 参考资料
 --------
 
+- :ref:`compiler-import` — import 系统中 marshal 的使用
+- :ref:`ceval-bytecodes` — 字节码序列化与反序列化
 - :file:`Python/marshal.c` — marshal 实现

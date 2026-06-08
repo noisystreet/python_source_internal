@@ -1,3 +1,5 @@
+.. _objects-func-code:
+
 函数与代码对象 — def 背后的结构
 ==================================
 
@@ -360,6 +362,8 @@ Cell 对象本身就是一个简单的结构体：
 参考资料
 --------
 
+- :ref:`objects-iterators` — 迭代器与生成器协议
+- :ref:`ceval-calls` — 函数调用的解释循环路径
 - :file:`Objects/funcobject.c` — PyFunctionObject 实现
 - :file:`Objects/codeobject.c` — PyCodeObject 实现
 - :pep:`302` — 新导入钩子

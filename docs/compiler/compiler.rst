@@ -1,3 +1,5 @@
+.. _compiler-compiler:
+
 字节码生成 (Compiler) — 从 AST 到字节码
 ================================================
 
@@ -146,4 +148,6 @@ Compiler 在生成代码后计算**评估栈的最大深度** ：
 参考资料
 --------
 
+- :ref:`ceval-loop` — 解释循环如何执行生成的字节码
+- :ref:`ceval-bytecodes` — 字节码指令集详解
 - :file:`Python/compile.c` — 字节码生成

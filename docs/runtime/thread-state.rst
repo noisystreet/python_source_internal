@@ -1,3 +1,5 @@
+.. _runtime-thread-state:
+
 线程状态 (PyThreadState)
 ====================================
 
@@ -149,4 +151,6 @@
 参考资料
 --------
 
+- :ref:`runtime-interpreter-state` — 解释器状态、线程状态、帧栈的关系
+- :ref:`ceval-loop` — 线程状态中的 current_frame 与执行循环
 - :file:`Python/pystate.c` — 线程状态管理

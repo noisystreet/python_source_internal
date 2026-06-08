@@ -1,3 +1,5 @@
+.. _objects-long:
+
 内置类型 — int (PyLongObject)
 ================================
 
@@ -261,6 +263,8 @@ CPython 在 ``_PyLong_Init`` 中初始化小整数池：
 参考资料
 --------
 
+- :ref:`objects-pyobject` — PyVarObject 与变长对象的 ob_size
+- :ref:`objects-typeobject` — PyLong_Type 与 tp_add/tp_str 的实现定位
 - :file:`Include/longintrepr.h` — ``PyLongObject`` 内部表示（digit / lv_tag）
 - :file:`Objects/longobject.c` — 大整数运算实现
 - `Knuth, The Art of Computer Programming, Vol. 2` — 多精度算术算法

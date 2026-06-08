@@ -1,3 +1,5 @@
+.. _gc-obmalloc:
+
 小块内存分配器 (obmalloc) — Python 的 malloc
 ====================================================
 
@@ -278,4 +280,6 @@ Pool 有三种状态：
 参考资料
 --------
 
+- :ref:`gc-arena` — arena 是 pymalloc 的上层结构
+- :ref:`extensions-memory-api` — C API 中的内存分配接口
 - :file:`Objects/obmalloc.c` — pymalloc 实现

@@ -1,3 +1,5 @@
+.. _exceptions-traceback:
+
 Traceback 与栈展开 — 错误信息的构建
 ============================================
 
@@ -108,4 +110,6 @@ Traceback 展示了从异常发生点到最外层调用的完整路径。这里 
 参考资料
 --------
 
+- :ref:`exceptions-handling` — 异常传播与 traceback 的关系
+- :ref:`exceptions-tracing` — sys.settrace 与行事件
 - :file:`Python/errors.c` — traceback 构建

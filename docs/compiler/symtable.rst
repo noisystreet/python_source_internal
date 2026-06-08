@@ -1,3 +1,5 @@
+.. _compiler-symtable:
+
 符号表 (Symtable) — 作用域与名字绑定
 ============================================
 
@@ -127,4 +129,6 @@
 参考资料
 --------
 
+- :ref:`compiler-compiler` — 编译器如何访问符号表
+- :ref:`compiler-ast` — 符号表建立在 AST 之上
 - :file:`Python/symtable.c` — 符号表实现

@@ -1,3 +1,5 @@
+.. _arch:
+
 CPython 源码架构总览
 =====================
 
@@ -228,3 +230,17 @@ CPython 源码布局与本项目文档的映射
 * 解读基线版本：CPython 3.14.x
 * 文档语言：中文为主，关键术语保留英文原文
 * 示例脚本风格：自包含、可独立运行，优先使用 ``ctypes`` 而非 C 扩展
+
+参考资料
+--------
+
+- :ref:`guide-repo` — CPython 源码目录结构
+- :ref:`objects` — 对象模型子系统
+- :ref:`ceval` — 执行引擎子系统
+- :ref:`compiler` — 编译子系统
+- :ref:`gc` — 内存管理子系统
+- :ref:`concurrency` — 并发子系统
+- :ref:`exceptions` — 异常子系统
+- :ref:`modules` — 模块子系统
+- :ref:`extensions` — 扩展子系统
+- :ref:`runtime` — 运行时子系统

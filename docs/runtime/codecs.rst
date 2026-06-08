@@ -1,3 +1,5 @@
+.. _runtime-codecs:
+
 Codec 系统 — 编码与解码基础设施
 ========================================
 
@@ -138,4 +140,6 @@ Codec 系统 — 编码与解码基础设施
 参考资料
 --------
 
+- :ref:`runtime-initconfig` — 初始化配置中的编码设置
+- :ref:`objects-unicode` — Unicode 对象的编解码依赖
 - :file:`Python/codecs.c` — codec 注册表

@@ -1,3 +1,5 @@
+.. _modules-builtins:
+
 内置模块与导入管道 — import 的底层实现
 ==============================================
 
@@ -196,3 +198,12 @@ FrozenImporter 比 BuiltinImporter 稍复杂——它需要反序列化字节码
      - C 层先加载 _frozen_importlib，然后它注册各类 finder/loader
    * - sys.meta_path 的顺序？
      - BuiltinImporter → FrozenImporter → PathFinder
+
+参考资料
+--------
+
+- :ref:`compiler-import` — import 系统的完整流程
+- :ref:`modules-object` — 模块对象结构
+- :pep:`302` — 新导入钩子
+- :file:`Python/import.c` — BuiltinImporter / FrozenImporter 实现
+- :file:`Python/importlib.h` — 冻结模块的 C 数组

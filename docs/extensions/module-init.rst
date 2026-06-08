@@ -1,3 +1,5 @@
+.. _extensions-module-init:
+
 模块初始化协议 — PyModuleDef
 ====================================
 
@@ -132,4 +134,7 @@
 参考资料
 --------
 
+- :ref:`extensions-multi-phase` — 多阶段初始化与子解释器
+- :ref:`extensions-dynamic-loading` — 动态加载与链接
+- :ref:`modules-object` — 模块对象的 C 层结构
 - :file:`Objects/moduleobject.c` — PyModule_Create

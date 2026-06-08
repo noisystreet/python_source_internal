@@ -1,3 +1,5 @@
+.. _concurrency-gil:
+
 GIL 设计与实现 — 全局解释器锁
 ====================================
 
@@ -172,6 +174,8 @@ CPython 默认每执行 **5ms** 的字节码就尝试切换 GIL。
 参考资料
 --------
 
+- :ref:`concurrency-free-threading` — 无 GIL 模式的方案对比
+- :ref:`concurrency-critical-section` — 自由线程下的临界区保护
 - :pep:`703` — 自由线程（无 GIL）
 - :file:`Python/ceval_gil.c` — GIL 的 take / drop 实现
 - `GIL 切换间隔 <https://docs.python.org/3/library/sys.html#sys.setswitchinterval>`__

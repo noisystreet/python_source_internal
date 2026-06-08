@@ -1,3 +1,5 @@
+.. _objects-property:
+
 property 的底层实现 — PyProperty_Type
 =============================================
 
@@ -151,4 +153,6 @@ property 的底层实现 — PyProperty_Type
 参考资料
 --------
 
+- :ref:`objects-descriptor` — 描述符协议与属性查找链
+- :ref:`objects-slots` — ``__slots__`` 与 ``property`` 的交互
 - :file:`Objects/descrobject.c` — PyProperty_Type 实现

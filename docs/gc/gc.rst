@@ -1,3 +1,5 @@
+.. _gc-gc:
+
 分代垃圾回收 — 解决循环引用
 =================================
 
@@ -279,6 +281,9 @@ CPython 的 GC 提供了丰富的调试支持：
 参考资料
 --------
 
+- :ref:`objects-refcount` — 引用计数：GC 的前置基础
+- :ref:`gc-cycles` — 循环引用检测算法细节
+- :ref:`gc-arena` — arena 与内存池架构
 - :pep:`442` — 安全终结的行为模型
 - :file:`Python/gc.c` — GC 收集器实现
 - :file:`Include/internal/pycore_gc.h` — GC 内部结构

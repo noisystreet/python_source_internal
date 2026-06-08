@@ -1,3 +1,5 @@
+.. _objects-dict:
+
 内置类型 — dict (PyDictObject)
 ==================================
 
@@ -255,6 +257,8 @@ CPython 使用**线性探测 (Linear Probing)** ：
 参考资料
 --------
 
+- :ref:`objects-set` — set 与 dict 共用哈希表实现
+- :ref:`objects-pyobject` — PyObject 头与哈希值缓存
 - :pep:`509` — dict 的私有版本号
 - :file:`Objects/dictobject.c` — dict 完整实现
 - :file:`Include/cpython/dictobject.h` — ``PyDictKeysObject`` 结构定义

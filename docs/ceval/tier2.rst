@@ -1,3 +1,5 @@
+.. _ceval-tier2:
+
 Tier 2 优化器 — 热路径的微码优化
 ========================================
 
@@ -183,6 +185,8 @@ executor 的版本号与代码对象的 ``co_version`` 绑定。
 参考资料
 --------
 
+- :ref:`ceval-loop` — Tier 1 执行循环与 Tier 2 的协作
+- :ref:`ceval-jit` — 从 Tier 2 微码到机器码的 JIT 编译
 - :pep:`659` — 自适应解释器
 - :file:`Python/ceval.c` — ``_PyEval_EvalDefault`` （Tier 2 入口）
 - :file:`Python/optimizer.c` — 优化器实现

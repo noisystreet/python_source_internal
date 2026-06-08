@@ -1,3 +1,5 @@
+.. _runtime-initconfig:
+
 配置与初始化 (initconfig)
 ====================================
 
@@ -138,4 +140,6 @@ Python 3.8 还引入了 ``PyPreConfig``，在 ``PyConfig`` 之前生效：
 参考资料
 --------
 
+- :ref:`runtime-lifecycle` — 完整初始化流程中的 PyConfig 角色
+- :ref:`runtime-interpreter-state` — 解释器状态初始化
 - :file:`Python/initconfig.c` — PyConfig 实现

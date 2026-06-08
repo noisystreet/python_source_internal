@@ -1,3 +1,5 @@
+.. _runtime-lifecycle:
+
 解释器生命周期 — Python 的启动与关闭
 ============================================
 
@@ -168,4 +170,7 @@ CPython 解释器的生命周期分为预初始化、初始化、执行、终结
 参考资料
 --------
 
+- :ref:`runtime-initconfig` — PyConfig 配置详解
+- :ref:`runtime-interpreter-state` — 解释器状态的创建与销毁
+- :ref:`runtime-thread-state` — 线程状态的生命周期
 - :file:`Python/pylifecycle.c` — 生命周期

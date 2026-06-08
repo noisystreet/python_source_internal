@@ -1,3 +1,5 @@
+.. _objects-classmethod:
+
 classmethod / staticmethod 的底层实现
 ===========================================
 
@@ -140,4 +142,6 @@ classmethod / staticmethod 的底层实现
 参考资料
 --------
 
+- :ref:`objects-descriptor` — 描述符协议与 __get__ 方法
+- :ref:`objects-typeobject` — 类型对象与 tp_descr_get
 - :file:`Objects/classobject.c` — classmethod/staticmethod 实现

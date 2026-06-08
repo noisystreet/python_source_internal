@@ -1,3 +1,5 @@
+.. _extensions-ctypes:
+
 ctypes 与外部函数接口
 =============================
 
@@ -131,4 +133,6 @@ ctypes 使用示例详见 Python 标准库文档。
 参考资料
 --------
 
+- :ref:`extensions-dynamic-loading` — 动态加载与符号解析
+- :ref:`extensions-c-api` — C API 与 ctypes 的互操作
 - :file:`Modules/_ctypes/` — ctypes 实现

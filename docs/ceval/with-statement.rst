@@ -1,3 +1,5 @@
+.. _ceval-with:
+
 with 语句的底层实现 — 上下文管理协议
 ===========================================
 
@@ -169,5 +171,7 @@ C 层面的检查：
 参考资料
 --------
 
+- :ref:`ceval-loop` — 解释循环中的大指令分派
+- :ref:`exceptions-handling` — WITH_EXCEPT_START 与异常处理
 - :pep:`343` — with 语句
 - :file:`Python/ceval.c` — BEFORE_WITH / WITH_EXCEPT_START
