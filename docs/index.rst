@@ -18,6 +18,8 @@ CPython 源码深度解读 —— 以文档为主、示例为辅，系统梳理 
    modules/index
    extensions/index
    runtime/index
+   genindex
+   glossary
    CONTRIBUTING
    CHANGELOG
    SECURITY
