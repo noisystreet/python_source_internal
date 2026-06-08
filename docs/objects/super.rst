@@ -122,3 +122,9 @@ C 层实现：
      - 在 MRO 中跳过当前类，从下一个类开始查找
    * - 无参 super() 怎么工作？
      - 编译器自动传入 __class__ 和 self
+
+参考资料
+--------
+
+- :file:`Objects/typeobject.c` — super 实现
+- :pep:`3135` — New Super

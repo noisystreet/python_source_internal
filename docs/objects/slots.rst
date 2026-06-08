@@ -146,3 +146,8 @@ CPython 在创建类时，根据 ``__slots__`` 调整类型的 ``tp_basicsize`` 
      - 告诉 CPython 这个类型的实例没有 __dict__
    * - 多继承要注意什么？
      - 子类也需定义 __slots__，否则父类的 slot 可能被覆盖
+
+参考资料
+--------
+
+- :file:`Objects/typeobject.c` — tp_members 分配

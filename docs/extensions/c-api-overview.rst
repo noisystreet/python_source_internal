@@ -149,3 +149,8 @@ C API 在 Python 层面不可见。运行 :file:`examples/module_demo.py` 可以
      - ``PyMethodDef`` 数组，以 ``{NULL}`` 结尾
    * - 最常用的异常设置函数？
      - ``PyErr_SetString``
+
+参考资料
+--------
+
+- :file:`Include/` — C API 头文件

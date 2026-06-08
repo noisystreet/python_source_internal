@@ -103,3 +103,8 @@ sys.modules 与模块缓存
      - ``del sys.modules['modname']`` 再 import
    * - 删除缓存会释放模块吗？
      - 不会，其他引用仍持有旧对象
+
+参考资料
+--------
+
+- :file:`Python/import.c` — 模块缓存管理

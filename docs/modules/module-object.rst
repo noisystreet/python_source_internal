@@ -161,3 +161,8 @@ C 扩展模块通过 ``PyModule_Create`` 从 ``PyModuleDef`` 构造模块：
      - module_traverse / module_clear 跟踪容器内的引用
    * - m_size = -1 什么意思？
      - 不需要模块级状态（无 per-module 数据）
+
+参考资料
+--------
+
+- :file:`Objects/moduleobject.c` — PyModuleObject

@@ -292,3 +292,8 @@ CPython 使用 **autoconf + make** 构建系统。核心命令：
      - ``./python -m test test_xxx``
    * - .py 到执行的完整链路？
      - Parser → AST → 符号表 → 编译器 → .pyc → ceval
+
+参考资料
+--------
+
+- :file:`README.rst` — CPython 官方 README

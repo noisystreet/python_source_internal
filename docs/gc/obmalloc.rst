@@ -267,3 +267,8 @@ Pool 有三种状态：
      - 从 arena 切分新 pool
    * - Arena 什么释放？
      - 所有 pool 都空时释放
+
+参考资料
+--------
+
+- :file:`Objects/obmalloc.c` — pymalloc 实现

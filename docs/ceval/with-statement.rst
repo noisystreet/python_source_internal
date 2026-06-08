@@ -158,3 +158,9 @@ C 层面的检查：
      - 抑制异常（PyErr_Clear）
    * - 不是上下文管理器会怎样？
      - BEFORE_WITH 检查 __enter__/__exit__ 属性，缺一即报错
+
+参考资料
+--------
+
+- :pep:`343` — with 语句
+- :file:`Python/ceval.c` — BEFORE_WITH / WITH_EXCEPT_START

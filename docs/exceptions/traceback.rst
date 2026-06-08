@@ -97,3 +97,8 @@ Traceback 展示了从异常发生点到最外层调用的完整路径。这里 
      - 沿 frame->previous 向上，逐帧查找 handler
    * - 什么时候记录 traceback？
      - 在离开一帧之前（未找到 handler 时）
+
+参考资料
+--------
+
+- :file:`Python/errors.c` — traceback 构建

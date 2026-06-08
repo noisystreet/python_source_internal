@@ -108,3 +108,8 @@ AST 的结构由 :file:`Parser/Python.asdl` 描述：
      - Python.asdl → Python-ast.c（自动生成）
    * - AST 去哪？
      - 作为 Compiler 的输入，生成字节码
+
+参考资料
+--------
+
+- :file:`Python/Python-ast.c` — AST 节点分配

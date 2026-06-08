@@ -116,3 +116,8 @@
      - LOCAL / GLOBAL / FREE / CELL
    * - 闭包怎么实现的？
      - FREE 变量从外层作用域捕获，CELL 变量被内层引用
+
+参考资料
+--------
+
+- :file:`Python/symtable.c` — 符号表实现

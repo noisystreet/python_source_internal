@@ -371,3 +371,9 @@ CPython 内部还有两种 C 级别的描述符，用于暴露 C 结构体成员
      - propertyobject 的 tp_descr_get 调用 getter 函数
    * - 描述符有哪些 C 级别实现？
      - PyMemberDescrObject（结构体成员）+ PyGetSetDescrObject（getter/setter）
+
+参考资料
+--------
+
+- :file:`Objects/descrobject.c` — 描述符实现
+- :pep:`252` — 类型属性和描述符

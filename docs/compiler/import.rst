@@ -100,3 +100,9 @@ CPython 的导入系统分为两步：
      - sys.modules 字典
    * - 两种模块类型？
      - 源码模块 (.py) 和扩展模块 (.so/.pyd)
+
+参考资料
+--------
+
+- :file:`Python/import.c` — 导入实现
+- :pep:`451` — ModuleSpec

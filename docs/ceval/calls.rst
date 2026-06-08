@@ -246,3 +246,9 @@ Vectorcall 的参数传递方式：
      - ``PyMethodObject`` 展开，self 插入参数列表首位
    * - 生成器调用有何不同？
      - 只创建帧不执行，立即返回生成器对象
+
+参考资料
+--------
+
+- :file:`Python/ceval.c` — 调用实现
+- :pep:`590` — Vectorcall

@@ -140,3 +140,8 @@ property 的底层实现 — PyProperty_Type
      - property 不可变，setter 创建副本并设置 prop_set
    * - 和普通方法的区别？
      - property 走 tp_descr_get，不走 tp_call
+
+参考资料
+--------
+
+- :file:`Objects/descrobject.c` — PyProperty_Type 实现

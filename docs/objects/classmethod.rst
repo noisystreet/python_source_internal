@@ -129,3 +129,8 @@ classmethod / staticmethod 的底层实现
      - 传的仍是 type(obj)，不是 obj
    * - staticmethod 和普通函数区别？
      - 本质无区别，语义上属于类的命名空间
+
+参考资料
+--------
+
+- :file:`Objects/classobject.c` — classmethod/staticmethod 实现

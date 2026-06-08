@@ -127,3 +127,8 @@ Codec 系统 — 编码与解码基础设施
      - 可以，通过 ``codecs.register`` 注册搜索函数
    * - encode/decode 的返回值？
      - ``(result, consumed_count)`` 元组
+
+参考资料
+--------
+
+- :file:`Python/codecs.c` — codec 注册表

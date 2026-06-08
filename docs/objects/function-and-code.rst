@@ -349,3 +349,10 @@ Cell 对象本身就是一个简单的结构体：
 ------
 
 理解了函数和代码对象后，我们来看**迭代器与生成器协议**——Python 中 ``for`` 循环和 ``yield`` 的底层实现。
+
+参考资料
+--------
+
+- :file:`Objects/funcobject.c` — PyFunctionObject 实现
+- :file:`Objects/codeobject.c` — PyCodeObject 实现
+- :pep:`302` — 新导入钩子

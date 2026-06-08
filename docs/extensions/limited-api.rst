@@ -119,3 +119,9 @@ Limited API 在扩展编译时生效。在 Python 层面，可以通过 ``sys.ab
      - 不能直接访问 PyObject 内部字段
    * - 什么时候选用？
      - 需要发布预编译 .so 给不同 Python 版本的用户
+
+参考资料
+--------
+
+- :pep:`384` — Stable ABI
+- :file:`Include/` — Limited API 声明

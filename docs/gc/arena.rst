@@ -213,3 +213,8 @@ CPython 使用 **Radix Tree（基数树）** 来做地址到 arena 的映射：
      - 所有 Pool 都空闲时
    * - 地址怎么查找？
      - 通过 Radix Tree 快速定位
+
+参考资料
+--------
+
+- :file:`Objects/obmalloc.c` — arena 管理

@@ -157,3 +157,8 @@ CPython 解释器的生命周期分为预初始化、初始化、执行、终结
      - atexit → 模块清理 → GC → 线程 → 解释器 → 运行时
    * - 主入口函数在哪？
      - ``Programs/python.c`` → ``Py_BytesMain()``
+
+参考资料
+--------
+
+- :file:`Python/pylifecycle.c` — 生命周期

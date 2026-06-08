@@ -300,3 +300,8 @@ CPython 保证回调在安全的时间点被调用。
      - proxy 透明代理，访问已死对象抛 ReferenceError
    * - CPython 内部哪里用了弱引用？
      - 类型子类追踪（tp_subclasses）、函数 watcher 等
+
+参考资料
+--------
+
+- :file:`Objects/weakrefobject.c` — 弱引用实现
