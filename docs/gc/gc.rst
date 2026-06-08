@@ -1,6 +1,13 @@
 分代垃圾回收 — 解决循环引用
 =================================
 
+.. epigraph::
+
+   "What is recycled lives again."
+
+   -- Seneca, Epistulae Morales ad Lucilium
+
+
 引用计数可以处理大部分内存管理，但它有一个根本缺陷：**无法处理循环引用** 。
 分代垃圾回收器 (GC) 就是为此而生。
 

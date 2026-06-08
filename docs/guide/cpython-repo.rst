@@ -1,6 +1,13 @@
 CPython 源码仓库导览 — 布局、构建与导航
 =================================================
 
+.. epigraph::
+
+   "The map is not the territory."
+
+   -- Alfred Korzybski (on navigating a codebase)
+
+
 本文是 CPython 源码仓库的**实操导览**，面向第一次打开 CPython 源码树的开发者。
 上一节 :doc:`/ARCHITECTURE` 讲述了运行时架构，这一节关注仓库本身——文件在哪、
 怎么构建、怎么找代码、怎么调试。

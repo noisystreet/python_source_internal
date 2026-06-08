@@ -1,6 +1,13 @@
 动态加载机制 — .so / .pyd 的加载
 ==========================================
 
+.. epigraph::
+
+   "All the world's a stage, and all the men and women merely players; They have their exits and their entrances."
+
+   -- William Shakespeare, As You Like It (on loading and unloading)
+
+
 CPython 通过 ``dlopen`` （Linux）或 ``LoadLibrary`` （Windows）加载 C 扩展。
 这个机制是 CPython "导入系统" 中 C 扩展模块与传统 .py 模块的分水岭。
 

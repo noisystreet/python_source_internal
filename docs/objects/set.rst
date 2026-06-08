@@ -1,6 +1,13 @@
 内置类型 — set (PySetObject)
 ================================
 
+.. epigraph::
+
+   "Set theory is the foundation of mathematics."
+
+   -- Georg Cantor
+
+
 ``set`` 和 ``dict`` 共享同一个哈希表实现的核心逻辑，但只存键，不存值。
 
 从一道题开始

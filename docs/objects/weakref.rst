@@ -1,6 +1,13 @@
 弱引用 —— 引用它但不留住它
 ===============================
 
+.. epigraph::
+
+   "The only way to avoid a circular argument is to break it."
+
+   -- Aristotle, Nichomachean Ethics
+
+
 在引用计数篇我们知道了：只要有人引用一个对象，它就不会被回收。但有时我们
 **想引用一个对象，同时又不想阻止它被回收** 。比如缓存、观察者模式、循环引用的打破。
 

@@ -1,6 +1,13 @@
 配置与初始化 (initconfig)
 ====================================
 
+.. epigraph::
+
+   "If you think good design is expensive, you should look at the cost of bad design."
+
+   -- Ralf Speth (on PyConfig)
+
+
 ``PyConfig`` 是 CPython 3.8+ 引入的配置结构，用于统一解释器的初始化参数。
 它取代了旧版中零散的 ``Py_SetProgramName``、``Py_SetPath`` 等 API。
 

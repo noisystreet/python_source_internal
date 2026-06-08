@@ -1,6 +1,13 @@
 PyTypeObject —— "类型"本身也是一个对象
 =========================================
 
+.. epigraph::
+
+   "The most important single aspect of software development is to be clear about what you are trying to build."
+
+   -- Fred Brooks, The Mythical Man-Month
+
+
 上一节我们知道了每个 Python 对象的头部都有一个 ``ob_type`` 指针：
 
 .. code-block:: c

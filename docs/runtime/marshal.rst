@@ -1,6 +1,13 @@
 编组与序列化 (marshal)
 ==============================
 
+.. epigraph::
+
+   "Data is a precious thing and will last longer than the systems themselves."
+
+   -- Tim Berners-Lee (on serialization)
+
+
 ``marshal`` 模块是 CPython 内部的序列化格式。它比 ``pickle`` 快，
 但只支持 Python 原生类型，因此主要用于 ``.pyc`` 文件的存储。
 

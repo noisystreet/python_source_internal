@@ -1,6 +1,13 @@
 内置类型 — dict (PyDictObject)
 ==================================
 
+.. epigraph::
+
+   "Algorithms + Data Structures = Programs."
+
+   -- Niklaus Wirth
+
+
 Python 的 ``dict`` 是语言的核心——它是对象的属性字典、全局/局部命名空间、
 ``__dict__`` 、以及 ``**kwargs`` 的底层实现。Python 程序运行时的每一步操作
 几乎都在和字典打交道。

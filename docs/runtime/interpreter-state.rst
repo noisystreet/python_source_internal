@@ -1,6 +1,13 @@
 解释器状态 (PyInterpreterState)
 ============================================
 
+.. epigraph::
+
+   "The state of your life is nothing more than a reflection of your state of mind."
+
+   -- Wayne Dyer
+
+
 ``PyInterpreterState`` 表示一个 Python 解释器实例——每个子解释器对应一个。
 它管理解释器级别的全局状态：小整数池、Unicode 缓存、模块缓存等。
 

@@ -1,6 +1,13 @@
 sys.settrace / sys.setprofile — 追踪与性能分析
 ====================================================
 
+.. epigraph::
+
+   "The unexamined code is not worth running."
+
+   -- Socrates (adapted)
+
+
 ``sys.settrace`` 和 ``sys.setprofile`` 允许在代码执行时设置回调函数，
 用于调试器（如 ``pdb`` ）和性能分析器（如 ``cProfile`` ）。
 

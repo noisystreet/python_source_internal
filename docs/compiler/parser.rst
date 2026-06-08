@@ -1,6 +1,13 @@
 语法分析器 (Parser) — PEG 语法分析
 ============================================
 
+.. epigraph::
+
+   "Everything should be made as simple as possible, but not simpler."
+
+   -- Albert Einstein
+
+
 CPython 3.9+ 使用 **PEG (Parsing Expression Grammar)** 解析器替代了
 原来的 LL(1) 解析器。PEG 解析器更强大、更易于维护，支持直接表达
 Python 语法的复杂性。

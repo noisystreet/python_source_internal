@@ -1,6 +1,13 @@
 导入机制 — import 语句的实现
 ===================================
 
+.. epigraph::
+
+   "Nothing comes from nothing."
+
+   -- Lucretius, De Rerum Natura (on modules and creation)
+
+
 Python 的 ``import`` 语句触发了一整套查找、加载、缓存机制。
 这一节来看 CPython 如何实现模块导入。
 

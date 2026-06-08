@@ -1,6 +1,13 @@
 Codec 系统 — 编码与解码基础设施
 ========================================
 
+.. epigraph::
+
+   "The limits of my language mean the limits of my world."
+
+   -- Ludwig Wittgenstein (on encoding and decoding)
+
+
 ``codecs`` 模块提供了编码/解码的基础设施，允许 Python 在处理文本和字节
 时支持数百种字符编码。
 

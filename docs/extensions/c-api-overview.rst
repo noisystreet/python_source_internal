@@ -1,6 +1,13 @@
 C API 概览 — 扩展 Python 的接口
 ======================================
 
+.. epigraph::
+
+   "Interfaces are the most important thing in software."
+
+   -- Ken Thompson
+
+
 CPython 提供了一套完整的 C API，供开发者编写 Python 的 C 扩展。
 这一章从高层次梳理 API 的分层体系，以及一个典型扩展模块的结构。
 

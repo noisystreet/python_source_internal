@@ -1,6 +1,13 @@
 临界区与锁 — 线程安全的基础
 ====================================
 
+.. epigraph::
+
+   "When two men ride a horse, one must ride behind."
+
+   -- Proverb (on mutual exclusion)
+
+
 CPython 提供了一套 C 级别的临界区宏，用于保护共享数据的访问。
 这部分机制在自由线程（``--disable-gil`` ）构建中至关重要。
 

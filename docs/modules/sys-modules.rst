@@ -1,6 +1,13 @@
 sys.modules 与模块缓存
 =============================
 
+.. epigraph::
+
+   "Memory is the treasury and guardian of all things."
+
+   -- Cicero (on module caching)
+
+
 ``sys.modules`` 是已导入模块的缓存字典。它保证每个模块只被加载一次，
 并提供了一个受限的命名空间隔离。
 

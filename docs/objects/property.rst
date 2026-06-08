@@ -1,6 +1,13 @@
 property 的底层实现 — PyProperty_Type
 =============================================
 
+.. epigraph::
+
+   "Simplicity is prerequisite for reliability."
+
+   -- Edsger Dijkstra
+
+
 ``property`` 是 Python 内置的描述符类型，它将方法调用伪装成属性访问。
 在 C 层，``property`` 是 ``PyProperty_Type``——一个实现了描述符协议的类。
 

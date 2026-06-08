@@ -1,6 +1,13 @@
 内置类型 — int (PyLongObject)
 ================================
 
+.. epigraph::
+
+   "God created the integers; all else is the work of man."
+
+   -- Leopold Kronecker
+
+
 Python 的 ``int`` 没有上限——你可以写 ``2 ** 1000000``，它不会溢出。
 这背后是一个**变长大整数**实现。
 

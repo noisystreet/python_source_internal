@@ -1,6 +1,13 @@
 自由线程 (Free-Threading) — 无 GIL 的 CPython
 =====================================================
 
+.. epigraph::
+
+   "Freedom is the recognition of necessity."
+
+   -- Friedrich Engels
+
+
 CPython 3.14 引入了实验性的自由线程构建（``--disable-gil`` ）。
 
 从一道题开始

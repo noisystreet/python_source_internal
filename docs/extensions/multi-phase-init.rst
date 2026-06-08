@@ -1,6 +1,13 @@
 多阶段初始化 — PEP 489
 ==============================
 
+.. epigraph::
+
+   "We must learn to live together as brothers or perish together as fools."
+
+   -- Martin Luther King Jr. (on sub-interpreter coexistence)
+
+
 PEP 489 引入了多阶段（multi-phase）模块初始化，允许模块在子解释器中安全使用。
 它是现代 C 扩展模块初始化的推荐方式。
 

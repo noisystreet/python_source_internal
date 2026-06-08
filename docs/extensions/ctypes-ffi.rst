@@ -1,6 +1,13 @@
 ctypes 与外部函数接口
 =============================
 
+.. epigraph::
+
+   "No man is an island, entire of itself."
+
+   -- John Donne (on foreign function interfaces)
+
+
 ``ctypes`` 是一个 C 扩展模块，允许 Python 直接调用 C 动态库中的函数，
 而无需编写任何 C 代码。
 

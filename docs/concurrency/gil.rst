@@ -1,6 +1,13 @@
 GIL 设计与实现 — 全局解释器锁
 ====================================
 
+.. epigraph::
+
+   "One Ring to rule them all, One Ring to find them."
+
+   -- J. R. R. Tolkien, The Lord of the Rings (on the GIL)
+
+
 GIL（Global Interpreter Lock）是 CPython 中最著名也最有争议的设计。
 它保证同一时刻只有一个线程在执行 Python 字节码。
 

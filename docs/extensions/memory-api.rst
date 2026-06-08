@@ -1,6 +1,13 @@
 内存与对象管理 API — PyMem / PyObject
 ============================================
 
+.. epigraph::
+
+   "Measure what is measurable, and make measurable what is not so."
+
+   -- Galileo Galilei (on memory management)
+
+
 C 扩展开发中最常用到的 API。CPython 提供了两套内存分配体系：
 ``PyMem`` 系列（原始内存）和 ``PyObject`` 系列（对象内存）。
 了解它们的区别和适用场景很重要。

@@ -1,6 +1,13 @@
 内置类型 — str (PyUnicodeObject)
 ====================================
 
+.. epigraph::
+
+   "A common language creates a common understanding."
+
+   -- Vint Cerf, co-creator of TCP/IP
+
+
 Python 的 ``str`` 是最常用的内置类型之一，也是实现最复杂的。为了在不同字符集之间做到
 **内存高效**，CPython 根据字符串内容自动选择三种内部表示之一。
 

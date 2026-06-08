@@ -1,6 +1,13 @@
 PyObject 结构
 =============
 
+.. epigraph::
+
+   "Simplification is complexity's natural adversary."
+
+   -- Alan Perlis, Epigrams on Programming
+
+
 .. 本文的写作风格：从最直观的问题出发，每步只加一个新概念，逐步深入。
    请保持这种「浅入深出」的叙事方式。
 

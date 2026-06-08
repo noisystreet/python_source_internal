@@ -1,6 +1,13 @@
 Tier 2 优化器 — 热路径的微码优化
 ========================================
 
+.. epigraph::
+
+   "The best performance improvement is the transition from the nonworking state to the working state."
+
+   -- John Ousterhout
+
+
 CPython 3.14 引入了**双层解释器架构** ：
 
 - **Tier 1** ：逐条执行字节码的自适应解释器

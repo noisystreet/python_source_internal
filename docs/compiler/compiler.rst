@@ -1,6 +1,13 @@
 字节码生成 (Compiler) — 从 AST 到字节码
 ================================================
 
+.. epigraph::
+
+   "All language designers are dissatisfied with their own creations."
+
+   -- Paul Graham
+
+
 Compiler 是整个编译流程的最后一步——它将 AST 转换为 CPython 字节码
 （``PyCodeObject`` ），然后交由 ceval 解释器执行。
 

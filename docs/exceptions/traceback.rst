@@ -1,6 +1,13 @@
 Traceback 与栈展开 — 错误信息的构建
 ============================================
 
+.. epigraph::
+
+   "The palest ink is better than the best memory."
+
+   -- Chinese Proverb (on tracebacks as memory)
+
+
 当异常没有被捕获时，Python 会打印 Traceback——它显示异常发生时的**完整调用栈** 。
 
 从一道题开始

@@ -1,6 +1,13 @@
 async/await 底层实现 — 协程与事件循环
 ============================================
 
+.. epigraph::
+
+   "Time is the coin of your life. It is the only coin you have, and only you can determine how it will be spent."
+
+   -- Carl Sandburg
+
+
 Python 的 ``async`` / ``await`` 语法在 C 层由**生成器架构**提供支持——协程
 本质上就是在生成的帧上做了封装的生成器。
 

@@ -1,6 +1,13 @@
 内置模块与导入管道 — import 的底层实现
 ==============================================
 
+.. epigraph::
+
+   "We are what we repeatedly do. Excellence, then, is not an act, but a habit."
+
+   -- Aristotle, Nicomachean Ethics (on built-in fundamentals)
+
+
 CPython 有一些模块是**编译进解释器**的，不需要从文件加载。
 除此之外，还有**冻结模块**（frozen modules）和基于文件的加载。
 这一节梳理整个导入管道（import pipeline）。

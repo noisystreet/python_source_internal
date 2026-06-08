@@ -1,6 +1,13 @@
 内存池与 Arena — 大块内存的管理
 ========================================
 
+.. epigraph::
+
+   "Nature abhors a vacuum."
+
+   -- Aristotle, Physics (on memory allocation)
+
+
 在 obmalloc 篇我们看到了 Arena/Pool/Block 三层结构。这一节深入
 **Arena 的管理策略**——CPython 如何分配和释放大块内存。
 

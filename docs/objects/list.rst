@@ -1,6 +1,13 @@
 内置类型 — list (PyListObject)
 ==================================
 
+.. epigraph::
+
+   "The programmer's chief tool is the ability to manage complexity."
+
+   -- Bjarne Stroustrup
+
+
 Python 的 ``list`` 是一个**动态数组**——它像 C 的数组一样支持 O(1) 随机访问，
 但又可以自动扩容。
 

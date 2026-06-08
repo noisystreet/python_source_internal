@@ -1,6 +1,13 @@
 属性访问与描述符
 ==================
 
+.. epigraph::
+
+   "What lies behind us and what lies before us are tiny matters compared to what lies within us."
+
+   -- Ralph Waldo Emerson (adapted for attribute access)
+
+
 当你在 Python 中写 ``obj.attr`` 时，CPython 内部走了一条精心设计的查找路径。
 这一节我们来拆开它。
 

@@ -1,6 +1,13 @@
 解释循环主流程 — 字节码引擎的心脏
 ========================================
 
+.. epigraph::
+
+   "It is not enough to have a good mind; the main thing is to use it well."
+
+   -- René Descartes
+
+
 CPython 的核心是一个**栈式字节码解释器** 。它读取编译生成的字节码指令，一条一条地执行。
 
 从一道题开始

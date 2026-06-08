@@ -1,6 +1,13 @@
 解释器生命周期 — Python 的启动与关闭
 ============================================
 
+.. epigraph::
+
+   "First, learn the meaning of what you say, and then speak."
+
+   -- Epictetus (on initialization)
+
+
 CPython 解释器的生命周期分为预初始化、初始化、执行、终结四个阶段。
 
 从一道题开始

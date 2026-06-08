@@ -1,6 +1,13 @@
 调用约定与栈帧 — PyObject_Vectorcall 协议
 ===============================================
 
+.. epigraph::
+
+   "A journey of a thousand miles begins with a single step."
+
+   -- Lao Tzu, Tao Te Ching
+
+
 上一节我们看到了 ``CALL`` 指令。这一节深入函数调用的核心——**Vectorcall 协议**，
 以及**栈帧的创建与切换** 。
 

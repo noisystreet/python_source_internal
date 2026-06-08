@@ -1,6 +1,13 @@
 环形引用检测 — 三色标记算法
 ========================================
 
+.. epigraph::
+
+   "What goes around comes around."
+
+   -- Proverb (on circular references)
+
+
 上一节我们看到了 GC 的整体流程。这一节深入**环形引用检测的核心算法**——
 CPython 使用的三色标记变体。
 

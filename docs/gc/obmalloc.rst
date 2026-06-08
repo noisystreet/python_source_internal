@@ -1,6 +1,13 @@
 小块内存分配器 (obmalloc) — Python 的 malloc
 ====================================================
 
+.. epigraph::
+
+   "The limits of my language mean the limits of my world."
+
+   -- Ludwig Wittgenstein
+
+
 CPython 在系统 ``malloc`` 之上实现了一个**专用的小块内存分配器** （obmalloc），
 专门为频繁创建和销毁的小对象（≤512 字节）设计。
 

@@ -1,6 +1,13 @@
 Limited API 与 Stable ABI
 ================================
 
+.. epigraph::
+
+   "The price of reliability is the pursuit of the utmost simplicity."
+
+   -- Tony Hoare
+
+
 Limited API 是 CPython 3.2+ 引入的 C API 子集，保证跨版本兼容。
 Stable ABI 是 Limited API 的二进制接口，一次编译可在多个 CPython 版本上运行。
 

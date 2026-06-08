@@ -1,6 +1,13 @@
 模块初始化协议 — PyModuleDef
 ====================================
 
+.. epigraph::
+
+   "Well begun is half done."
+
+   -- Aristotle (on module initialization)
+
+
 每个 C 扩展模块通过 ``PyModuleDef`` 定义模块的元数据和初始化函数。
 这是 C 扩展开发者最常接触的数据结构。
 

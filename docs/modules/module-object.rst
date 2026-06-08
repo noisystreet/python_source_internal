@@ -1,6 +1,13 @@
 模块对象与命名空间 — PyModuleObject
 ============================================
 
+.. epigraph::
+
+   "A name is a mirror of the thing it names."
+
+   -- Plato, Cratylus
+
+
 Python 的模块在 C 层就是 ``PyModuleObject``——一个包装了字典的对象。
 C 扩展模块的初始化同样围绕 ``PyModuleDef`` 和 ``PyModuleObject`` 展开。
 

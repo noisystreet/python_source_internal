@@ -1,6 +1,13 @@
 内置类型 — tuple (PyTupleObject)
 ====================================
 
+.. epigraph::
+
+   "Immutability changes everything."
+
+   -- Tony Hoare, on the design of CSP
+
+
 ``tuple`` 和 ``list`` 看起来很像——都存着 ``PyObject*`` 数组。
 但有一个关键区别：**tuple 是不可变的** 。
 

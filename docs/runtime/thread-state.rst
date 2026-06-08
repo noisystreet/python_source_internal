@@ -1,6 +1,13 @@
 线程状态 (PyThreadState)
 ====================================
 
+.. epigraph::
+
+   "A house divided against itself cannot stand."
+
+   -- Abraham Lincoln (on threads in a process)
+
+
 ``PyThreadState`` 表示一个 Python 线程——每个 Python 线程对应一个。
 它保存了线程局部的运行时状态：当前帧、异常信息、递归深度等。
 

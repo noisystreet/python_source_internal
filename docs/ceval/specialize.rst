@@ -1,6 +1,13 @@
 指令特化 (Specialization) — 自适应优化
 =============================================
 
+.. epigraph::
+
+   "Adapt or perish, now as ever, is nature's inexorable imperative."
+
+   -- H. G. Wells
+
+
 CPython 3.11+ 引入了**自适应字节码指令 (Adaptive Instruction)**——指令在运行时
 根据参数的实际类型，将自己替换为**特化版本** 。
 

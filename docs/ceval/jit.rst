@@ -1,6 +1,13 @@
 JIT 编译器 — 从微码到机器码
 ==================================
 
+.. epigraph::
+
+   "Any sufficiently advanced technology is indistinguishable from magic."
+
+   -- Arthur C. Clarke
+
+
 CPython 3.14 包含一个实验性的 **复制并修补 (Copy-and-Patch) JIT 编译器** 。
 它从 Tier 2 微码生成原生机器码，实现接近 C 级别的执行速度。
 

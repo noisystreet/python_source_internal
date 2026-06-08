@@ -1,6 +1,13 @@
 __slots__ 的底层实现
 ============================
 
+.. epigraph::
+
+   "Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away."
+
+   -- Antoine de Saint-Exupéry
+
+
 ``__slots__`` 是 Python 中用于**限制实例属性**并**节省内存**的机制。
 这一节从 C 层的角度解释它的工作原理。
 

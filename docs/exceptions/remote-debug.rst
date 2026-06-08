@@ -1,6 +1,13 @@
 调试支持 — pdb 与底层调试协议
 ====================================
 
+.. epigraph::
+
+   "Debugging is twice as hard as writing the code in the first place."
+
+   -- Brian Kernighan
+
+
 Python 的调试器（``pdb``）基于 ``sys.settrace`` 实现。这一节深入
 调试器的底层工作方式——断点管理、检查点触发、交互循环。
 

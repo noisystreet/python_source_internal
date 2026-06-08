@@ -1,6 +1,13 @@
 Tokenizer — 词法分析器
 =============================
 
+.. epigraph::
+
+   "In the beginning was the Word."
+
+   -- John 1:1
+
+
 编译系统的第一站是将源代码文本转换为**词法单元（token）流** 。CPython 3.14 使用
 一个手写的词法分析器（tokenizer），将它从传统的 `Parser/tokenizer/` 移到了
 `Parser/lexer/`，并完全重写以更好地支持 f-string 嵌套。

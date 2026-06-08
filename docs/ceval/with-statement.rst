@@ -1,6 +1,13 @@
 with 语句的底层实现 — 上下文管理协议
 ===========================================
 
+.. epigraph::
+
+   "Enter by the narrow gate; for the gate is wide and the way is easy that leads to destruction."
+
+   -- Matthew 7:13 (on entering and exiting)
+
+
 ``with`` 语句是 Python 的上下文管理语法糖。在 C 层，它对应
 字节码 ``SETUP_WITH``、``WITH_EXCEPT_START`` 和 ``POP_BLOCK``。
 

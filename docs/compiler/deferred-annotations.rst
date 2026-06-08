@@ -1,6 +1,13 @@
 PEP 649 — 延迟注解评估
 ================================
 
+.. epigraph::
+
+   "Never put off till tomorrow what you can do today."
+
+   -- Thomas Jefferson (ironically inverted for deferred evaluation)
+
+
 PEP 649 是 Python 3.14 中引入的最重要的语法变更之一。
 它改变了**类型注解的评估时机**——从定义时立即评估推迟到需要时才评估。
 

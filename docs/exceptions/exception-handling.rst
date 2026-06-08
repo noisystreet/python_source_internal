@@ -1,6 +1,13 @@
 异常处理链 — try / except / finally 的底层实现
 ====================================================
 
+.. epigraph::
+
+   "Errors are the portals of discovery."
+
+   -- James Joyce, Ulysses
+
+
 Python 的异常处理机制在 C 层由**异常传播链**和**帧展开**组成。``try`` / ``except`` / ``finally``
 在字节码层面由 ``SETUP_FINALLY`` 、``PUSH_EXC_INFO`` 、``JUMP`` 等指令实现。
 

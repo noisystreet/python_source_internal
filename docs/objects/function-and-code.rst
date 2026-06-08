@@ -1,6 +1,13 @@
 函数与代码对象 — def 背后的结构
 ==================================
 
+.. epigraph::
+
+   "A language that doesn't affect the way you think about programming is not worth knowing."
+
+   -- Alan Perlis
+
+
 在 Python 里定义一个函数很简单：
 
 .. code-block:: python

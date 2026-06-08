@@ -1,6 +1,13 @@
 classmethod / staticmethod 的底层实现
 ===========================================
 
+.. epigraph::
+
+   "The whole is greater than the sum of its parts."
+
+   -- Aristotle, Metaphysics
+
+
 ``classmethod`` 和 ``staticmethod`` 是 Python 内置的描述符类型，
 它们修改方法调用时的**第一个参数**传递方式。
 

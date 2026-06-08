@@ -1,6 +1,13 @@
 super() 的底层实现 — MRO 与方法解析
 ============================================
 
+.. epigraph::
+
+   "The shortest path between two truths in the real domain passes through the complex domain."
+
+   -- Jacques Hadamard
+
+
 ``super()`` 是 Python 中处理**协作多继承** （cooperative multiple inheritance）的关键机制。
 在 C 层，``super()`` 返回一个 ``super`` 对象，它根据 MRO（方法解析顺序）委托方法调用。
 

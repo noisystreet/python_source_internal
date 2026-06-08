@@ -1,6 +1,13 @@
 抽象语法树 (AST) — 语法结构的中间表示
 =============================================
 
+.. epigraph::
+
+   "Trees are the fundamental data structure of computation."
+
+   -- Harold Abelson, Structure and Interpretation of Computer Programs
+
+
 AST（Abstract Syntax Tree）是 Parser 的输出、Compiler 的输入——它是
 源代码语法结构的树状表示，不包含具体语法细节（如括号、分号）。
 

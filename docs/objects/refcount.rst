@@ -1,6 +1,13 @@
 引用计数 —— 谁在用我？
 ========================
 
+.. epigraph::
+
+   "Memory is the canvas of computation."
+
+   -- Chuck Thacker, ACM Turing Award Lecture
+
+
 在 PyObject 篇我们看到了每个对象头部都有一个 ``ob_refcnt`` 字段。这一节我们就来
 深入这个计数器——它如何决定一个对象的生死，以及在多线程时代遇到了什么挑战。
 

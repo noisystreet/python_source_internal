@@ -1,6 +1,13 @@
 迭代器与生成器协议 — for 循环的底层逻辑
 ===========================================
 
+.. epigraph::
+
+   "The purpose of abstraction is not to be vague, but to create a new semantic level."
+
+   -- Edsger Dijkstra
+
+
 在 Python 里几乎每天都在用 ``for`` ：
 
 .. code-block:: python

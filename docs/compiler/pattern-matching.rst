@@ -1,6 +1,13 @@
 match / case — 模式匹配的底层实现
 =========================================
 
+.. epigraph::
+
+   "The art of being wise is the art of knowing what to overlook."
+
+   -- William James
+
+
 Python 3.10 引入的 ``match`` / ``case`` 语句（PEP 634-636）是
 语言中最复杂的语法特性之一。它涉及新的 AST 节点、新的字节码指令，
 以及一个用 Python 实现的模式匹配编译器。

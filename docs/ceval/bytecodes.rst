@@ -1,6 +1,13 @@
 核心字节码指令分析
 =====================
 
+.. epigraph::
+
+   "Every program is a function of its input and its state."
+
+   -- Simson Garfinkel
+
+
 上一节我们看了解释循环的整体结构。这一节来拆解**具体指令的实现**——CPython 300+
 字节码指令是如何在 C 层实现的，以及 3.14 中的超指令（superinstruction）优化。
 

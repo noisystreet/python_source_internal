@@ -1,6 +1,13 @@
 符号表 (Symtable) — 作用域与名字绑定
 ============================================
 
+.. epigraph::
+
+   "What's in a name? That which we call a rose by any other name would smell as sweet."
+
+   -- William Shakespeare, Romeo and Juliet (on scope and names)
+
+
 符号表是编译过程中的一个关键阶段——在 AST 生成后、字节码生成前，
 它分析每个名字（变量、函数、类）在哪个作用域定义、在哪引用。
 
